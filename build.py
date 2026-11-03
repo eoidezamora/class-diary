@@ -10,6 +10,8 @@ import html
 import pathlib
 import re
 
+import json
+
 import markdown
 
 ROOT = pathlib.Path(__file__).parent
@@ -77,14 +79,55 @@ def nav(months, current):
     links = ['<a href="index.html" class="{}">Inicio</a>'.format("on" if current == "index" else "")]
     for m in months:
         links.append(f'<a href="{m["slug"]}.html" class="{"on" if current == m["slug"] else ""}">{m["title"]}</a>')
+    links.append('<a href="materiales.html" class="{}">Materiales</a>'.format("on" if current == "materiales" else ""))
     return '<nav class="months" aria-label="Meses">' + "".join(links) + "</nav>"
 
 
+def load_materials():
+    path = CONTENT / "materiales.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+
+
+MATERIALS = load_materials()
+
+
 def session_card(s):
+    used = [m for m in MATERIALS if int(s["num"]) in m["sessions"]]
+    mats = ""
+    if used:
+        links = "".join(
+            f'<a href="{m["file"]}" target="_blank" rel="noopener"><b>{m["code"]}</b> {html.escape(m["title"])}</a>'
+            for m in used
+        )
+        mats = f'<div class="mats"><span>Materiales de la sesión</span>{links}</div>'
     return (
         f'<article class="session" id="{s["id"]}">'
         f'<header><span class="badge">Sesión {s["num"]}</span><time>{s["date"]}</time></header>'
-        f'<p class="lead">{s["lead"]}</p>{s["html"]}</article>'
+        f'<p class="lead">{s["lead"]}</p>{mats}{s["html"]}</article>'
+    )
+
+
+def materials_page(months):
+    where = {s["num"]: (m["slug"], s["id"]) for m in months for s in m["sessions"]}
+    cards = []
+    for mat in MATERIALS:
+        sess = [str(n) for n in mat["sessions"] if str(n) in where]
+        if sess:
+            used = "Usada en: " + " · ".join(
+                f'<a href="{where[n][0]}.html#{where[n][1]}">Sesión {n}</a>' for n in sess
+            )
+        else:
+            used = "Para las próximas sesiones"
+        cards.append(
+            f'<article class="mat-card"><span class="mat-code">{mat["code"]}</span>'
+            f'<div><h2>{html.escape(mat["title"])}</h2><p>{html.escape(mat["topic"])}</p>'
+            f'<p class="used">{used}</p></div>'
+            f'<a class="btn" href="{mat["file"]}" target="_blank" rel="noopener">Abrir PDF</a></article>'
+        )
+    return (
+        '<h1 class="month-title">Materiales</h1>'
+        '<p class="intro">Las fichas de clase (worksheets) en PDF, para repasar o imprimir. '
+        'Cada ficha indica en qué sesiones la usamos.</p>' + "".join(cards)
     )
 
 
@@ -158,6 +201,9 @@ def build():
             + "".join(session_card(s) for s in m["sessions"])
         )
         (ROOT / f'{m["slug"]}.html').write_text(page(f'{m["title"]} · {SITE_TITLE}', months, m["slug"], main), encoding="utf-8")
+    (ROOT / "materiales.html").write_text(
+        page(f"Materiales · {SITE_TITLE}", months, "materiales", materials_page(months)), encoding="utf-8"
+    )
     print("OK:", ", ".join(m["slug"] for m in months))
 
 

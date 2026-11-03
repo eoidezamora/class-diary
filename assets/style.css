@@ -128,3 +128,32 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
   .session { padding: 16px 14px 4px; border-radius: 12px; }
   .brand img { height: 36px; }
 }
+
+/* Materiales */
+.intro { color: var(--muted); font-size: 1.05rem; margin: 0 0 18px; }
+.mat-card {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin-bottom: 14px;
+}
+.mat-code {
+  font-family: "Baloo 2", sans-serif; font-size: 1.6rem; font-weight: 800; color: #fff; background: var(--blue);
+  border-radius: 12px; width: 64px; height: 64px; display: grid; place-items: center;
+}
+.mat-card h2 { font-size: 1.25rem; margin: 0 0 2px; line-height: 1.25; }
+.mat-card p { margin: 2px 0; color: var(--muted); font-size: .95rem; }
+.mat-card .used { color: var(--ink); font-weight: 700; }
+.btn {
+  background: var(--coral); color: #fff; text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 10px; white-space: nowrap;
+}
+.mats { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0 4px; }
+.mats span { font-weight: 700; font-size: .9rem; color: var(--muted); margin-right: 2px; }
+.mats a {
+  text-decoration: none; background: var(--soft); border: 1px solid var(--line); color: var(--ink);
+  border-radius: 999px; padding: 4px 12px; font-size: .92rem;
+}
+.mats a b { color: var(--blue); margin-right: 2px; }
+@media (max-width: 560px) {
+  .mat-card { grid-template-columns: auto 1fr; }
+  .mat-card .btn { grid-column: 1 / -1; text-align: center; }
+  .mat-code { width: 52px; height: 52px; font-size: 1.3rem; }
+}

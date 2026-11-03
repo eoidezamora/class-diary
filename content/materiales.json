@@ -1,0 +1,37 @@
+[
+  {
+    "code": "W8",
+    "title": "Halloween & Creatures",
+    "topic": "Halloween, be (+ − ?), nacionalidades, It's for…, el alfabeto",
+    "file": "materiales/W8_Halloween_Creatures_A2.pdf",
+    "sessions": [7]
+  },
+  {
+    "code": "W7",
+    "title": "Where are you from? Nationalities · The British Isles",
+    "topic": "Países y nacionalidades, be (+ − ?), from / born in, UK, Great Britain o England",
+    "file": "materiales/W7_Nationalities_British_Isles_A2.pdf",
+    "sessions": [6, 7, 8]
+  },
+  {
+    "code": "W6",
+    "title": "Who am I? Celebrity check-in",
+    "topic": "Datos personales: nombres, fechas, lugares, emails y teléfonos",
+    "file": "materiales/W6_Who_Am_I_Celebrity_Checkin_A2.pdf",
+    "sessions": []
+  },
+  {
+    "code": "W4",
+    "title": "Fact-checkers!",
+    "topic": "Negativa de be para corregir información, nacionalidades, Who's it by?, What's it for?",
+    "file": "materiales/W4_Fact-checkers_A2.pdf",
+    "sessions": [4, 5, 6]
+  },
+  {
+    "code": "W2",
+    "title": "The Alphabet Tree",
+    "topic": "El alfabeto: sonidos de las letras y deletrear",
+    "file": "materiales/W2_Alphabet_Tree_A2.pdf",
+    "sessions": [2, 3, 4]
+  }
+]

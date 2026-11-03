@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Materiales · Class Diary · Básico A2</title>
+<link rel="icon" href="assets/logo-eoi.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a href="index.html" class="brand"><img src="assets/logo-eoi.png" alt="EOI de Zamora"><span><b>Class Diary</b><small>Básico A2 · 2026-27</small></span></a>
+  </div>
+  <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="materiales.html" class="on">Materiales</a></nav></div>
+</header>
+<main class="wrap">
+<h1 class="month-title">Materiales</h1><p class="intro">Las fichas de clase (worksheets) en PDF, para repasar o imprimir. Cada ficha indica en qué sesiones la usamos.</p><article class="mat-card"><span class="mat-code">W8</span><div><h2>Halloween &amp; Creatures</h2><p>Halloween, be (+ − ?), nacionalidades, It&#x27;s for…, el alfabeto</p><p class="used">Usada en: <a href="2026-10.html#sesion-7">Sesión 7</a></p></div><a class="btn" href="materiales/W8_Halloween_Creatures_A2.pdf" target="_blank" rel="noopener">Abrir PDF</a></article><article class="mat-card"><span class="mat-code">W7</span><div><h2>Where are you from? Nationalities · The British Isles</h2><p>Países y nacionalidades, be (+ − ?), from / born in, UK, Great Britain o England</p><p class="used">Usada en: <a href="2026-10.html#sesion-6">Sesión 6</a> · <a href="2026-10.html#sesion-7">Sesión 7</a> · <a href="2026-11.html#sesion-8">Sesión 8</a></p></div><a class="btn" href="materiales/W7_Nationalities_British_Isles_A2.pdf" target="_blank" rel="noopener">Abrir PDF</a></article><article class="mat-card"><span class="mat-code">W6</span><div><h2>Who am I? Celebrity check-in</h2><p>Datos personales: nombres, fechas, lugares, emails y teléfonos</p><p class="used">Para las próximas sesiones</p></div><a class="btn" href="materiales/W6_Who_Am_I_Celebrity_Checkin_A2.pdf" target="_blank" rel="noopener">Abrir PDF</a></article><article class="mat-card"><span class="mat-code">W4</span><div><h2>Fact-checkers!</h2><p>Negativa de be para corregir información, nacionalidades, Who&#x27;s it by?, What&#x27;s it for?</p><p class="used">Usada en: <a href="2026-10.html#sesion-4">Sesión 4</a> · <a href="2026-10.html#sesion-5">Sesión 5</a> · <a href="2026-10.html#sesion-6">Sesión 6</a></p></div><a class="btn" href="materiales/W4_Fact-checkers_A2.pdf" target="_blank" rel="noopener">Abrir PDF</a></article><article class="mat-card"><span class="mat-code">W2</span><div><h2>The Alphabet Tree</h2><p>El alfabeto: sonidos de las letras y deletrear</p><p class="used">Usada en: <a href="2026-10.html#sesion-2">Sesión 2</a> · <a href="2026-10.html#sesion-3">Sesión 3</a> · <a href="2026-10.html#sesion-4">Sesión 4</a></p></div><a class="btn" href="materiales/W2_Alphabet_Tree_A2.pdf" target="_blank" rel="noopener">Abrir PDF</a></article>
+</main>
+<footer class="wrap foot">
+  <img src="assets/licencia-cc.png" alt="Licencia Creative Commons BY-NC-SA, Laura Jambrina Alonso">
+  <p>© Laura Jambrina Alonso, EOI de Zamora. Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. Las referencias al libro <i>English File</i> (Oxford University Press) pertenecen a sus autores.</p>
+</footer>
+<script>
+document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
+  var key = 'cd-' + box.dataset.key;
+  try { box.checked = localStorage.getItem(key) === '1'; } catch (e) {}
+  box.addEventListener('change', function () {
+    try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>
