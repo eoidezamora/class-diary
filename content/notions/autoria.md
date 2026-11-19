@@ -1,0 +1,3 @@
+- ***by*** = «de» cuando hablamos del autor: *a painting **by** Velázquez*, *a book **by** Cervantes* (nunca <s>*of Cervantes*</s>).
+- Para preguntar: ***Who's it by?*** – *It's by Picasso.*
+- Para corregir: *No, it isn't by Dalí. It's by Picasso.*

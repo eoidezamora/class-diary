@@ -1,0 +1,4 @@
+- ***Whose*** /huːz/ = ¿de quién? *Whose book is this?* Suena igual que *Who's* (*Who is*), pero no lleva *'s*: nunca <s>*Whose's*</s>.
+- El ***'s*** de los nombres indica posesión: *It's **Álvaro's**.* (es de Álvaro).
+- Ojo: *Álvaro's happy* también puede ser *Álvaro is happy*. Lo aclara el contexto.
+- *it's* (= *it is*) no es *its* (su, de una cosa).

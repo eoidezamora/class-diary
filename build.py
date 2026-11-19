@@ -13,6 +13,9 @@ import re
 import json
 
 import markdown
+from markdown_it import MarkdownIt
+
+MD = MarkdownIt("commonmark", {"html": True, "typographer": False}).enable("table").enable("strikethrough")
 
 ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
@@ -47,7 +50,7 @@ def homework(match):
 
 def render_md(text):
     text = re.sub(r"^HW(\[[^\n]*)$", homework, text, flags=re.M)
-    out = markdown.markdown(text, extensions=["tables", "sane_lists"])
+    out = MD.render(text)
     out = out.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
     out = re.sub(r"<h3>• ", "<h3>", out)
     out = re.sub(r'<a href="(http[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', out)
@@ -103,7 +106,7 @@ def load_months():
                 body = body[m.end():]
             body_html = render_md(body).replace("{SESSION}", sid)
             body_html = tag_headings(body_html, sid, int(num))
-            sessions.append({"id": sid, "num": num, "date": date, "lead": render_md(lead)[3:-4], "html": body_html})
+            sessions.append({"id": sid, "num": num, "date": date, "lead": re.sub(r"^\s*<p>|</p>\s*$", "", render_md(lead)), "html": body_html})
         months.append({"slug": path.stem, "title": title, "sessions": sessions})
     return months
 
@@ -208,11 +211,22 @@ def notion_article(n, months):
             f'<h3>{heading}</h3>{chunk}'
             f'<p class="back"><a href="{slug}.html#{anchor}">Ver en el diario de la sesión {k} →</a></p></article>'
         )
+    summary_path = CONTENT / "notions" / f'{n["id"]}.md'
+    summary = ""
+    if summary_path.exists():
+        summary = (
+            '<article class="session summary" id="resumen"><header><span class="badge sum">Resumen</span>'
+            '<time>Todo lo visto, ordenado</time></header>'
+            + render_md(summary_path.read_text(encoding="utf-8")).replace("<h3>", "<h3 class=\"sh\">")
+            + "</article>"
+        )
+        toc.insert(0, '<a href="#resumen">Resumen<small>Todo junto</small></a>')
     return (
         f'<p class="crumbs"><a href="notions.html">Notions</a> ›</p>'
         f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
-        f'<p class="intro">{html.escape(n["desc"])} Aquí tienes reunido todo lo que hemos visto en clase, sesión a sesión.</p>'
-        f'<div class="toc">{"".join(toc)}</div>' + "".join(parts)
+        f'<p class="intro">{html.escape(n["desc"])} Primero, el resumen con todo junto; después, lo que vimos en cada sesión.</p>'
+        f'<div class="toc">{"".join(toc)}</div>' + summary
+        + ('<h2 class="section-title">Sesión a sesión</h2>' if parts else "") + "".join(parts)
     )
 
 
