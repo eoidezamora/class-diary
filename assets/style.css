@@ -157,3 +157,14 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
   .mat-card .btn { grid-column: 1 / -1; text-align: center; }
   .mat-code { width: 52px; height: 52px; font-size: 1.3rem; }
 }
+
+/* Notions */
+.notion { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--green); border-radius: 16px; padding: 16px 18px 6px; margin-bottom: 14px; scroll-margin-top: 130px; }
+.notion h2 { font-size: 1.3rem; margin: 0 0 2px; }
+.notion h2 small { font-family: "Atkinson Hyperlegible", sans-serif; font-weight: 400; font-size: .9rem; color: var(--muted); font-style: italic; margin-left: 6px; }
+.notion p { margin: 2px 0 6px; color: var(--muted); }
+.notion ul { list-style: none; padding: 0; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+.notion li a { display: inline-block; text-decoration: none; background: var(--soft); border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: 4px 12px; font-size: .92rem; }
+.notion li b { color: var(--coral); }
+.notion:target { box-shadow: 0 0 0 3px var(--green); }
+.mats.nots a { border-color: var(--green); }

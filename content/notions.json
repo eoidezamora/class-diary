@@ -1,0 +1,194 @@
+[
+  {
+    "id": "numeros",
+    "title": "Números",
+    "en": "Numbers",
+    "desc": "Del 0 al 100, -teen o -ty, cientos y miles con and, fifteen hundred, ordinales, teléfonos y años.",
+    "refs": [
+      [
+        9,
+        "Repaso de días y números"
+      ],
+      [
+        10,
+        "Números del 11 al 19"
+      ],
+      [
+        11,
+        "Del 20 al 100 y ordinales"
+      ],
+      [
+        12,
+        "Teléfonos: plus, de uno en uno"
+      ],
+      [
+        13,
+        "Cientos, miles, and y fifteen hundred"
+      ],
+      [
+        13,
+        "Cómo se leen los años"
+      ]
+    ]
+  },
+  {
+    "id": "lugar",
+    "title": "Lugar y dirección",
+    "en": "Place and direction",
+    "desc": "in / to the north of, in u on, by / near / next to, preposiciones para situar un lugar.",
+    "refs": [
+      [
+        9,
+        "in the north o to the north?"
+      ],
+      [
+        11,
+        "Situar un lugar · preposiciones"
+      ],
+      [
+        13,
+        "in o on: on a key ring"
+      ]
+    ]
+  },
+  {
+    "id": "procedencia",
+    "title": "Procedencia y nacionalidad",
+    "en": "Origin and nationality",
+    "desc": "from + país o be + nacionalidad, I was born in…, Where in Spain are you from?",
+    "refs": [
+      [
+        5,
+        "Países y nacionalidades"
+      ],
+      [
+        6,
+        "from + país / be + nacionalidad"
+      ],
+      [
+        8,
+        "Where are you from?"
+      ],
+      [
+        10,
+        "to be born"
+      ],
+      [
+        11,
+        "Where in Spain are you from?"
+      ]
+    ]
+  },
+  {
+    "id": "tiempo",
+    "title": "Tiempo: días, fechas y años",
+    "en": "Time: days, dates and years",
+    "desc": "Días de la semana, meses, ordinales para las fechas, cómo se leen los años, in / on.",
+    "refs": [
+      [
+        10,
+        "Días de la semana"
+      ],
+      [
+        11,
+        "Fechas y años"
+      ],
+      [
+        13,
+        "Cómo se leen los años"
+      ]
+    ]
+  },
+  {
+    "id": "contenido",
+    "title": "Contenido o envase",
+    "en": "Container and contents",
+    "desc": "a bottle of water o a water bottle, a cup of coffee o a coffee cup.",
+    "refs": [
+      [
+        13,
+        "a bottle of water / a water bottle"
+      ]
+    ]
+  },
+  {
+    "id": "corregir",
+    "title": "Afirmar, negar y corregir información",
+    "en": "Correcting information",
+    "desc": "be en negativa (she's not, isn't), also y too, confirmar y corregir datos.",
+    "refs": [
+      [
+        4,
+        "Corregir con not"
+      ],
+      [
+        6,
+        "Dos formas de negar"
+      ],
+      [
+        12,
+        "Confirmar y corregir"
+      ]
+    ]
+  },
+  {
+    "id": "deletrear",
+    "title": "Deletrear e identificar",
+    "en": "Spelling",
+    "desc": "El alfabeto, How do you spell it?, cómo se deletrea un email.",
+    "refs": [
+      [
+        2,
+        "El alfabeto"
+      ],
+      [
+        3,
+        "The Alphabet Song"
+      ],
+      [
+        12,
+        "Deletrear un email"
+      ]
+    ]
+  },
+  {
+    "id": "posesion",
+    "title": "Posesión",
+    "en": "Possession",
+    "desc": "Whose? y Who's, el 's de los nombres.",
+    "refs": [
+      [
+        9,
+        "Who's o Whose"
+      ]
+    ]
+  },
+  {
+    "id": "finalidad",
+    "title": "Finalidad y causa",
+    "en": "Purpose and reason",
+    "desc": "to + verbo, for + nombre, because + oración.",
+    "refs": [
+      [
+        1,
+        "Why do you study English?"
+      ],
+      [
+        2,
+        "to, for, because"
+      ]
+    ]
+  },
+  {
+    "id": "autoria",
+    "title": "Autoría",
+    "en": "Authorship",
+    "desc": "Who's it by? It's by Picasso.",
+    "refs": [
+      [
+        6,
+        "Who's it by?"
+      ]
+    ]
+  }
+]

@@ -79,6 +79,7 @@ def nav(months, current):
     links = ['<a href="index.html" class="{}">Inicio</a>'.format("on" if current == "index" else "")]
     for m in months:
         links.append(f'<a href="{m["slug"]}.html" class="{"on" if current == m["slug"] else ""}">{m["title"]}</a>')
+    links.append('<a href="notions.html" class="{}">Notions</a>'.format("on" if current == "notions" else ""))
     links.append('<a href="materiales.html" class="{}">Materiales</a>'.format("on" if current == "materiales" else ""))
     return '<nav class="months" aria-label="Meses">' + "".join(links) + "</nav>"
 
@@ -91,6 +92,14 @@ def load_materials():
 MATERIALS = load_materials()
 
 
+def load_notions():
+    path = CONTENT / "notions.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+
+
+NOTIONS = load_notions()
+
+
 def session_card(s):
     used = [m for m in MATERIALS if int(s["num"]) in m["sessions"]]
     mats = ""
@@ -100,6 +109,10 @@ def session_card(s):
             for m in used
         )
         mats = f'<div class="mats"><span>Materiales de la sesión</span>{links}</div>'
+    nots = [n for n in NOTIONS if any(int(s["num"]) == r[0] for r in n["refs"])]
+    if nots:
+        links = "".join(f'<a href="notions.html#{n["id"]}">{html.escape(n["title"])}</a>' for n in nots)
+        mats += f'<div class="mats nots"><span>Notions</span>{links}</div>'
     return (
         f'<article class="session" id="{s["id"]}">'
         f'<header><span class="badge">Sesión {s["num"]}</span><time>{s["date"]}</time></header>'
@@ -128,6 +141,26 @@ def materials_page(months):
         '<h1 class="month-title">Materiales</h1>'
         '<p class="intro">Las fichas de clase (worksheets) en PDF, para repasar o imprimir. '
         'Cada ficha indica en qué sesiones la usamos.</p>' + "".join(cards)
+    )
+
+
+def notions_page(months):
+    where = {s["num"]: (m["slug"], s["id"], s["date"]) for m in months for s in m["sessions"]}
+    cards = []
+    for n in NOTIONS:
+        refs = []
+        for num, label in n["refs"]:
+            k = str(num)
+            if k in where:
+                refs.append(f'<li><a href="{where[k][0]}.html#{where[k][1]}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
+        cards.append(
+            f'<article class="notion" id="{n["id"]}"><h2>{html.escape(n["title"])} <small>{html.escape(n["en"])}</small></h2>'
+            f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul></article>'
+        )
+    return (
+        '<h1 class="month-title">Notions</h1>'
+        '<p class="intro">Las ideas que expresamos en inglés (lugar, cantidad, tiempo…) y las sesiones en que las hemos trabajado. '
+        'Pulsa una sesión para ir directamente a su explicación.</p>' + "".join(cards)
     )
 
 
@@ -203,6 +236,9 @@ def build():
         (ROOT / f'{m["slug"]}.html').write_text(page(f'{m["title"]} · {SITE_TITLE}', months, m["slug"], main), encoding="utf-8")
     (ROOT / "materiales.html").write_text(
         page(f"Materiales · {SITE_TITLE}", months, "materiales", materials_page(months)), encoding="utf-8"
+    )
+    (ROOT / "notions.html").write_text(
+        page(f"Notions · {SITE_TITLE}", months, "notions", notions_page(months)), encoding="utf-8"
     )
     print("OK:", ", ".join(m["slug"] for m in months))
 
