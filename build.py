@@ -18,6 +18,8 @@ ROOT = pathlib.Path(__file__).parent
 CONTENT = ROOT / "content"
 SITE_TITLE = "Class Diary · Básico A2"
 YEAR = "2026-27"
+import hashlib
+CSS_V = hashlib.md5((pathlib.Path(__file__).parent / "assets" / "style.css").read_bytes()).hexdigest()[:8]
 
 
 def slugify(text):
@@ -248,7 +250,7 @@ def page(title, months, current, main):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={CSS_V}">
 </head>
 <body>
 <header class="top">
