@@ -215,16 +215,16 @@ def notion_article(n, months):
     summary = ""
     if summary_path.exists():
         summary = (
-            '<article class="session summary" id="resumen"><header><span class="badge sum">Resumen</span>'
-            '<time>Todo lo visto, ordenado</time></header>'
+            '<article class="session summary" id="resumen"><header><span class="badge sum">Artículo</span>'
+            '<time>Todo lo visto, explicado y ordenado</time></header>'
             + render_md(summary_path.read_text(encoding="utf-8")).replace("<h3>", "<h3 class=\"sh\">")
             + "</article>"
         )
-        toc.insert(0, '<a href="#resumen">Resumen<small>Todo junto</small></a>')
+        toc.insert(0, '<a href="#resumen">Artículo<small>Todo junto</small></a>')
     return (
         f'<p class="crumbs"><a href="notions.html">Notions</a> ›</p>'
         f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
-        f'<p class="intro">{html.escape(n["desc"])} Primero, el resumen con todo junto; después, lo que vimos en cada sesión.</p>'
+        f'<p class="intro">{html.escape(n["desc"])} Primero, el artículo con todo lo visto, explicado y ordenado; después, lo que vimos en cada sesión.</p>'
         f'<div class="toc">{"".join(toc)}</div>' + summary
         + ('<h2 class="section-title">Sesión a sesión</h2>' if parts else "") + "".join(parts)
     )
