@@ -7,27 +7,48 @@
     "refs": [
       [
         9,
-        "Repaso de días y números"
+        "Repaso de días y números",
+        "que-hicimos"
       ],
       [
         10,
-        "Números del 11 al 19"
+        "Números del 11 al 19",
+        "numeros-del-11"
       ],
       [
         11,
-        "Del 20 al 100 y ordinales"
+        "-teen o -ty, del 20 al 100",
+        "numeros-teen"
+      ],
+      [
+        11,
+        "Ordinales",
+        "fechas"
       ],
       [
         12,
-        "Teléfonos: plus, de uno en uno"
+        "Teléfonos: plus",
+        "preguntar-datos"
       ],
       [
         13,
-        "Cientos, miles, and y fifteen hundred"
+        "Cientos y miles",
+        "cientos-y-miles"
       ],
       [
         13,
-        "Cómo se leen los años"
+        "¿Cuándo va and?",
+        "cuando-va-and"
+      ],
+      [
+        13,
+        "fifteen hundred",
+        "miles-con-dos"
+      ],
+      [
+        13,
+        "Cómo se leen los años",
+        "grammar-point"
       ]
     ]
   },
@@ -39,19 +60,23 @@
     "refs": [
       [
         9,
-        "in the north o to the north?"
+        "in the north o to the north?",
+        "in-the-north"
       ],
       [
         11,
-        "Where in Spain are you from?"
+        "Where in Spain are you from?",
+        "where-in-spain"
       ],
       [
         11,
-        "Situar un lugar · preposiciones"
+        "Situar un lugar · preposiciones",
+        "situar-un-lugar-preposiciones"
       ],
       [
         11,
-        "Describe tu ciudad o tu pueblo"
+        "Describe tu ciudad o tu pueblo",
+        "situar-un-lugar-describe"
       ]
     ]
   },
@@ -63,7 +88,8 @@
     "refs": [
       [
         13,
-        "in o on: on a key ring"
+        "in o on: on a key ring",
+        "notions"
       ]
     ]
   },
@@ -75,7 +101,8 @@
     "refs": [
       [
         13,
-        "Calles y plazas en el Reino Unido"
+        "Calles y plazas en el Reino Unido",
+        "calles-y-plazas"
       ]
     ]
   },
@@ -87,23 +114,28 @@
     "refs": [
       [
         5,
-        "Países y nacionalidades"
+        "Países y nacionalidades",
+        "que-hicimos"
       ],
       [
         6,
-        "from + país / be + nacionalidad"
+        "from + país / be + nacionalidad",
+        "who-s-it-by"
       ],
       [
         8,
-        "Where are you from?"
+        "País o nacionalidad",
+        "pais-o-nacionalidad"
       ],
       [
         10,
-        "to be born"
+        "to be born",
+        "pizarra-to-be-born"
       ],
       [
         11,
-        "Where in Spain are you from?"
+        "Where in Spain are you from?",
+        "where-in-spain"
       ]
     ]
   },
@@ -115,15 +147,23 @@
     "refs": [
       [
         10,
-        "Días de la semana"
+        "Días de la semana",
+        "dias-de-la-semana"
       ],
       [
         11,
-        "Fechas y años"
+        "Fechas: ordinales",
+        "fechas"
+      ],
+      [
+        11,
+        "Cómo se leen los años",
+        "como-se-leen"
       ],
       [
         13,
-        "Cómo se leen los años"
+        "Grammar point: los años",
+        "grammar-point"
       ]
     ]
   },
@@ -135,7 +175,8 @@
     "refs": [
       [
         13,
-        "a bottle of water / a water bottle"
+        "a bottle of water / a water bottle",
+        "notions"
       ]
     ]
   },
@@ -147,15 +188,18 @@
     "refs": [
       [
         4,
-        "Corregir con not"
+        "Corregir con not",
+        "para-corregir"
       ],
       [
         6,
-        "Dos formas de negar"
+        "Dos formas de negar",
+        "dos-formas-de-negar"
       ],
       [
         12,
-        "Confirmar y corregir"
+        "Confirmar y corregir",
+        "confirmar-corregir"
       ]
     ]
   },
@@ -167,15 +211,18 @@
     "refs": [
       [
         2,
-        "El alfabeto"
+        "El alfabeto",
+        "que-hicimos"
       ],
       [
         3,
-        "The Alphabet Song"
+        "The Alphabet Song",
+        "pizarra-the-alphabet"
       ],
       [
         12,
-        "Deletrear un email"
+        "Deletrear un email",
+        "como-se-deletrea"
       ]
     ]
   },
@@ -187,7 +234,8 @@
     "refs": [
       [
         9,
-        "Who's o Whose"
+        "Who's o Whose",
+        "contracciones-con-be"
       ]
     ]
   },
@@ -199,11 +247,13 @@
     "refs": [
       [
         1,
-        "Why do you study English?"
+        "Why do you study English?",
+        "pizarra-why"
       ],
       [
         2,
-        "to, for, because"
+        "to, for, because",
+        "para-explicar"
       ]
     ]
   },
@@ -215,7 +265,8 @@
     "refs": [
       [
         6,
-        "Who's it by?"
+        "Who's it by?",
+        "who-s-it-by"
       ]
     ]
   }

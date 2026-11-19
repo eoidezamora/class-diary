@@ -168,3 +168,8 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
 .notion li b { color: var(--coral); }
 .notion:target { box-shadow: 0 0 0 3px var(--green); }
 .mats.nots a { border-color: var(--green); }
+.session h3 { scroll-margin-top: 130px; }
+.ntags { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 8px 14px; }
+.ntag { font-size: .8rem; text-decoration: none; color: var(--green); border: 1px solid var(--green); border-radius: 999px; padding: 1px 10px; font-weight: 700; }
+.ntag::before { content: "Notion · "; font-weight: 400; color: var(--muted); }
+@media (prefers-color-scheme: dark) { .ntag { color: #9BCB6B; border-color: #9BCB6B; } }

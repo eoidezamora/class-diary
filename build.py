@@ -52,6 +52,36 @@ def render_md(text):
     return out
 
 
+def plain(text):
+    return re.sub(r"<[^>]+>", "", text)
+
+
+def h3_slug(sid, inner):
+    return sid + "-" + slugify(html.unescape(plain(inner)))
+
+
+def find_anchor(sid, hint, body_html):
+    for slug in re.findall(r'<h3 id="([^"]+)">', body_html):
+        if slug.startswith(sid + "-" + hint):
+            return slug
+    return sid
+
+
+def tag_headings(body_html, sid, num):
+    def repl(m):
+        inner = m.group(1)
+        slug = h3_slug(sid, inner)
+        tags = []
+        for n in NOTIONS:
+            for r in n["refs"]:
+                if r[0] == num and len(r) > 2 and slug.startswith(sid + "-" + r[2]):
+                    tags.append(f'<a class="ntag" href="notions.html#{n["id"]}">{html.escape(n["title"])}</a>')
+                    break
+        tag_html = f'<div class="ntags">{"".join(tags)}</div>' if tags else ""
+        return f'<h3 id="{slug}">{inner}</h3>{tag_html}'
+    return re.sub(r"<h3>(.*?)</h3>", repl, body_html)
+
+
 def load_months():
     months = []
     for path in sorted(CONTENT.glob("*.md"), reverse=True):
@@ -70,6 +100,7 @@ def load_months():
                 lead = m.group(1).strip()
                 body = body[m.end():]
             body_html = render_md(body).replace("{SESSION}", sid)
+            body_html = tag_headings(body_html, sid, int(num))
             sessions.append({"id": sid, "num": num, "date": date, "lead": render_md(lead)[3:-4], "html": body_html})
         months.append({"slug": path.stem, "title": title, "sessions": sessions})
     return months
@@ -112,7 +143,7 @@ def session_card(s):
     nots = [n for n in NOTIONS if any(int(s["num"]) == r[0] for r in n["refs"])]
     if nots:
         links = "".join(f'<a href="notions.html#{n["id"]}">{html.escape(n["title"])}</a>' for n in nots)
-        mats += f'<div class="mats nots"><span>Notions</span>{links}</div>'
+        mats += f'<div class="mats nots"><span>Notions de la sesión</span>{links}</div>'
     return (
         f'<article class="session" id="{s["id"]}">'
         f'<header><span class="badge">Sesión {s["num"]}</span><time>{s["date"]}</time></header>'
@@ -145,14 +176,16 @@ def materials_page(months):
 
 
 def notions_page(months):
-    where = {s["num"]: (m["slug"], s["id"], s["date"]) for m in months for s in m["sessions"]}
+    where = {s["num"]: (m["slug"], s["id"], s["html"]) for m in months for s in m["sessions"]}
     cards = []
     for n in NOTIONS:
         refs = []
-        for num, label in n["refs"]:
+        for r in n["refs"]:
+            num, label = r[0], r[1]
             k = str(num)
             if k in where:
-                refs.append(f'<li><a href="{where[k][0]}.html#{where[k][1]}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
+                anchor = find_anchor(where[k][1], r[2], where[k][2]) if len(r) > 2 else where[k][1]
+                refs.append(f'<li><a href="{where[k][0]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
         cards.append(
             f'<article class="notion" id="{n["id"]}"><h2>{html.escape(n["title"])} <small>{html.escape(n["en"])}</small></h2>'
             f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul></article>'
