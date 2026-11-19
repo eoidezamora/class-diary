@@ -75,7 +75,7 @@ def tag_headings(body_html, sid, num):
         for n in NOTIONS:
             for r in n["refs"]:
                 if r[0] == num and len(r) > 2 and slug.startswith(sid + "-" + r[2]):
-                    tags.append(f'<a class="ntag" href="notions.html#{n["id"]}"><span>Notion&nbsp;·</span> {html.escape(n["title"])}</a>')
+                    tags.append(f'<a class="ntag" href="notion-{n["id"]}.html#{slug}"><span>Notion&nbsp;·</span> {html.escape(n["title"])}</a>')
                     break
         tag_html = f'<div class="ntags">{"".join(tags)}</div>' if tags else ""
         return f'<h3 id="{slug}">{inner}</h3>{tag_html}'
@@ -142,7 +142,7 @@ def session_card(s):
         mats = f'<div class="mats"><span>Materiales de la sesión</span>{links}</div>'
     nots = [n for n in NOTIONS if any(int(s["num"]) == r[0] for r in n["refs"])]
     if nots:
-        links = "".join(f'<a href="notions.html#{n["id"]}">{html.escape(n["title"])}</a>' for n in nots)
+        links = "".join(f'<a href="notion-{n["id"]}.html">{html.escape(n["title"])}</a>' for n in nots)
         mats += f'<div class="mats nots"><span>Notions de la sesión</span>{links}</div>'
     return (
         f'<article class="session" id="{s["id"]}">'
@@ -175,25 +175,65 @@ def materials_page(months):
     )
 
 
+def extract_section(body_html, anchor):
+    m = re.search(rf'<h3 id="{re.escape(anchor)}">(.*?)</h3>', body_html)
+    if not m:
+        return None, ""
+    rest = body_html[m.end():]
+    nxt = re.search(r'<h3 id=|<div class="hw">', rest)
+    chunk = rest[: nxt.start()] if nxt else rest
+    chunk = re.sub(r'<div class="ntags">.*?</div>', "", chunk, flags=re.S)
+    chunk = chunk.replace('id="', 'data-id="')
+    return m.group(1), chunk
+
+
+def notion_article(n, months):
+    where = {s["num"]: (m["slug"], s["id"], s["html"], s["date"]) for m in months for s in m["sessions"]}
+    parts, toc = [], []
+    for r in sorted(n["refs"], key=lambda r: r[0]):
+        k = str(r[0])
+        if k not in where or len(r) < 3:
+            continue
+        slug, sid, body, date = where[k]
+        anchor = find_anchor(sid, r[2], body)
+        heading, chunk = extract_section(body, anchor)
+        if heading is None:
+            continue
+        toc.append(f'<a href="#{anchor}">Sesión {k}<small>{html.escape(r[1])}</small></a>')
+        parts.append(
+            f'<article class="session art" id="{anchor}">'
+            f'<header><span class="badge">Sesión {k}</span><time>{date}</time></header>'
+            f'<h3>{heading}</h3>{chunk}'
+            f'<p class="back"><a href="{slug}.html#{anchor}">Ver en el diario de la sesión {k} →</a></p></article>'
+        )
+    return (
+        f'<p class="crumbs"><a href="notions.html">Notions</a> ›</p>'
+        f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
+        f'<p class="intro">{html.escape(n["desc"])} Aquí tienes reunido todo lo que hemos visto en clase, sesión a sesión.</p>'
+        f'<div class="toc">{"".join(toc)}</div>' + "".join(parts)
+    )
+
+
 def notions_page(months):
     where = {s["num"]: (m["slug"], s["id"], s["html"]) for m in months for s in m["sessions"]}
     cards = []
     for n in NOTIONS:
         refs = []
-        for r in n["refs"]:
+        for r in sorted(n["refs"], key=lambda r: r[0]):
             num, label = r[0], r[1]
             k = str(num)
             if k in where:
                 anchor = find_anchor(where[k][1], r[2], where[k][2]) if len(r) > 2 else where[k][1]
-                refs.append(f'<li><a href="{where[k][0]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
+                refs.append(f'<li><a href="notion-{n["id"]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
         cards.append(
-            f'<article class="notion" id="{n["id"]}"><h2>{html.escape(n["title"])} <small>{html.escape(n["en"])}</small></h2>'
-            f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul></article>'
+            f'<article class="notion" id="{n["id"]}"><h2><a href="notion-{n["id"]}.html">{html.escape(n["title"])}</a> <small>{html.escape(n["en"])}</small></h2>'
+            f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul>'
+            f'<a class="btn read" href="notion-{n["id"]}.html">Leer el artículo completo</a></article>'
         )
     return (
         '<h1 class="month-title">Notions</h1>'
         '<p class="intro">Las ideas que expresamos en inglés (lugar, cantidad, tiempo…) y las sesiones en que las hemos trabajado. '
-        'Pulsa una sesión para ir directamente a su explicación.</p>' + "".join(cards)
+        'Cada notion es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte.</p>' + "".join(cards)
     )
 
 
@@ -270,6 +310,10 @@ def build():
     (ROOT / "materiales.html").write_text(
         page(f"Materiales · {SITE_TITLE}", months, "materiales", materials_page(months)), encoding="utf-8"
     )
+    for n in NOTIONS:
+        (ROOT / f'notion-{n["id"]}.html').write_text(
+            page(f'{n["title"]} · Notions · {SITE_TITLE}', months, "notions", notion_article(n, months)), encoding="utf-8"
+        )
     (ROOT / "notions.html").write_text(
         page(f"Notions · {SITE_TITLE}", months, "notions", notions_page(months)), encoding="utf-8"
     )

@@ -178,3 +178,13 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
 .mats.nots span { font-size: .82rem; }
 .notion li a { font-size: .84rem; padding: 3px 10px; word-spacing: normal; }
 .ntags { margin-top: -4px; }
+
+/* Notion articles */
+.crumbs { margin: 22px 0 -16px; font-weight: 700; }
+.crumbs a { text-decoration: none; color: var(--green); }
+.month-title .en { display: block; margin-top: 4px; font-family: "Atkinson Hyperlegible", sans-serif; font-size: 1rem; font-weight: 400; font-style: italic; color: var(--muted); }
+.art h3 { margin-top: 14px; }
+.art .back { margin: 18px 0 14px; font-size: .9rem; }
+.art .back a { color: var(--coral); font-weight: 700; text-decoration: none; }
+.notion h2 a { color: var(--ink); text-decoration: none; }
+.notion .btn.read { display: inline-block; margin: 0 0 14px; font-size: .88rem; padding: 6px 12px; background: var(--green); }
