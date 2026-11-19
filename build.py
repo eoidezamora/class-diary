@@ -77,11 +77,12 @@ def tag_headings(body_html, sid, num):
         inner = m.group(1)
         slug = h3_slug(sid, inner)
         tags = []
-        for n in NOTIONS:
-            for r in n["refs"]:
-                if r[0] == num and len(r) > 2 and slug.startswith(sid + "-" + r[2]):
-                    tags.append(f'<a class="ntag" href="notion-{n["id"]}.html#{slug}"><span>Notion&nbsp;·</span> {html.escape(n["title"])}</a>')
-                    break
+        for c in COLLECTIONS:
+            for n in c["items"]:
+                for r in n["refs"]:
+                    if r[0] == num and len(r) > 2 and slug.startswith(sid + "-" + r[2]):
+                        tags.append(f'<a class="ntag {c["cls"]}" href="{c["prefix"]}-{n["id"]}.html#{slug}"><span>{c["tag"]}&nbsp;·</span> {html.escape(n["title"])}</a>')
+                        break
         tag_html = f'<div class="ntags">{"".join(tags)}</div>' if tags else ""
         return f'<h3 id="{slug}">{inner}</h3>{tag_html}'
     return re.sub(r"<h3>(.*?)</h3>", repl, body_html)
@@ -115,7 +116,8 @@ def nav(months, current):
     links = ['<a href="index.html" class="{}">Inicio</a>'.format("on" if current == "index" else "")]
     for m in months:
         links.append(f'<a href="{m["slug"]}.html" class="{"on" if current == m["slug"] else ""}">{m["title"]}</a>')
-    links.append('<a href="notions.html" class="{}">Notions</a>'.format("on" if current == "notions" else ""))
+    for c in COLLECTIONS:
+        links.append(f'<a href="{c["key"]}.html" class="{"on" if current == c["key"] else ""}">{c["label"]}</a>')
     links.append('<a href="materiales.html" class="{}">Materiales</a>'.format("on" if current == "materiales" else ""))
     return '<nav class="months" aria-label="Meses">' + "".join(links) + "</nav>"
 
@@ -128,12 +130,18 @@ def load_materials():
 MATERIALS = load_materials()
 
 
-def load_notions():
-    path = CONTENT / "notions.json"
-    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
-
-
-NOTIONS = load_notions()
+COLLECTIONS = [
+    {"key": "notions", "label": "Notions", "tag": "Notion", "prefix": "notion", "cls": "",
+     "intro": "Las ideas que expresamos en inglés (lugar, cantidad, tiempo…) y las sesiones en que las hemos trabajado. "
+              "Cada notion es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte."},
+    {"key": "grammar", "label": "Grammar", "tag": "Grammar", "prefix": "grammar", "cls": "g",
+     "intro": "Los puntos de gramática que hemos trabajado y las sesiones en que aparecen. "
+              "Cada punto es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte."},
+]
+for _c in COLLECTIONS:
+    _p = CONTENT / f'{_c["key"]}.json'
+    _c["items"] = json.loads(_p.read_text(encoding="utf-8")) if _p.exists() else []
+NOTIONS = COLLECTIONS[0]["items"]
 
 
 def session_card(s):
@@ -145,10 +153,11 @@ def session_card(s):
             for m in used
         )
         mats = f'<div class="mats"><span>Materiales de la sesión</span>{links}</div>'
-    nots = [n for n in NOTIONS if any(int(s["num"]) == r[0] for r in n["refs"])]
-    if nots:
-        links = "".join(f'<a href="notion-{n["id"]}.html">{html.escape(n["title"])}</a>' for n in nots)
-        mats += f'<div class="mats nots"><span>Notions de la sesión</span>{links}</div>'
+    for c in COLLECTIONS:
+        nots = [n for n in c["items"] if any(int(s["num"]) == r[0] for r in n["refs"])]
+        if nots:
+            links = "".join(f'<a href="{c["prefix"]}-{n["id"]}.html">{html.escape(n["title"])}</a>' for n in nots)
+            mats += f'<div class="mats nots {c["cls"]}"><span>{c["label"]} de la sesión</span>{links}</div>'
     return (
         f'<article class="session" id="{s["id"]}">'
         f'<header><span class="badge">Sesión {s["num"]}</span><time>{s["date"]}</time></header>'
@@ -192,7 +201,7 @@ def extract_section(body_html, anchor):
     return m.group(1), chunk
 
 
-def notion_article(n, months):
+def notion_article(n, months, c):
     where = {s["num"]: (m["slug"], s["id"], s["html"], s["date"]) for m in months for s in m["sessions"]}
     parts, toc = [], []
     for r in sorted(n["refs"], key=lambda r: r[0]):
@@ -211,18 +220,18 @@ def notion_article(n, months):
             f'<h3>{heading}</h3>{chunk}'
             f'<p class="back"><a href="{slug}.html#{anchor}">Ver en el diario de la sesión {k} →</a></p></article>'
         )
-    summary_path = CONTENT / "notions" / f'{n["id"]}.md'
+    summary_path = CONTENT / c["key"] / f'{n["id"]}.md'
     summary = ""
     if summary_path.exists():
         summary = (
-            '<article class="session summary" id="resumen"><header><span class="badge sum">Artículo</span>'
+            f'<article class="session summary {c["cls"]}" id="resumen"><header><span class="badge sum">Artículo</span>'
             '<time>Todo lo visto, explicado y ordenado</time></header>'
             + render_md(summary_path.read_text(encoding="utf-8")).replace("<h3>", "<h3 class=\"sh\">")
             + "</article>"
         )
         toc.insert(0, '<a href="#resumen">Artículo<small>Todo junto</small></a>')
     return (
-        f'<p class="crumbs"><a href="notions.html">Notions</a> ›</p>'
+        f'<p class="crumbs {c["cls"]}"><a href="{c["key"]}.html">{c["label"]}</a> ›</p>'
         f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
         f'<p class="intro">{html.escape(n["desc"])} Primero, el artículo con todo lo visto, explicado y ordenado; después, lo que vimos en cada sesión.</p>'
         f'<div class="toc">{"".join(toc)}</div>' + summary
@@ -230,26 +239,25 @@ def notion_article(n, months):
     )
 
 
-def notions_page(months):
+def notions_page(months, c):
     where = {s["num"]: (m["slug"], s["id"], s["html"]) for m in months for s in m["sessions"]}
     cards = []
-    for n in NOTIONS:
+    for n in c["items"]:
         refs = []
         for r in sorted(n["refs"], key=lambda r: r[0]):
             num, label = r[0], r[1]
             k = str(num)
             if k in where:
                 anchor = find_anchor(where[k][1], r[2], where[k][2]) if len(r) > 2 else where[k][1]
-                refs.append(f'<li><a href="notion-{n["id"]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
+                refs.append(f'<li><a href="{c["prefix"]}-{n["id"]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
         cards.append(
-            f'<article class="notion" id="{n["id"]}"><h2><a href="notion-{n["id"]}.html">{html.escape(n["title"])}</a> <small>{html.escape(n["en"])}</small></h2>'
+            f'<article class="notion {c["cls"]}" id="{n["id"]}"><h2><a href="{c["prefix"]}-{n["id"]}.html">{html.escape(n["title"])}</a> <small>{html.escape(n["en"])}</small></h2>'
             f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul>'
-            f'<a class="btn read" href="notion-{n["id"]}.html">Leer el artículo completo</a></article>'
+            f'<a class="btn read" href="{c["prefix"]}-{n["id"]}.html">Leer el artículo completo</a></article>'
         )
     return (
-        '<h1 class="month-title">Notions</h1>'
-        '<p class="intro">Las ideas que expresamos en inglés (lugar, cantidad, tiempo…) y las sesiones en que las hemos trabajado. '
-        'Cada notion es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte.</p>' + "".join(cards)
+        f'<h1 class="month-title">{c["label"]}</h1>'
+        f'<p class="intro">{c["intro"]}</p>' + "".join(cards)
     )
 
 
@@ -326,13 +334,14 @@ def build():
     (ROOT / "materiales.html").write_text(
         page(f"Materiales · {SITE_TITLE}", months, "materiales", materials_page(months)), encoding="utf-8"
     )
-    for n in NOTIONS:
-        (ROOT / f'notion-{n["id"]}.html').write_text(
-            page(f'{n["title"]} · Notions · {SITE_TITLE}', months, "notions", notion_article(n, months)), encoding="utf-8"
+    for c in COLLECTIONS:
+        for n in c["items"]:
+            (ROOT / f'{c["prefix"]}-{n["id"]}.html').write_text(
+                page(f'{n["title"]} · {c["label"]} · {SITE_TITLE}', months, c["key"], notion_article(n, months, c)), encoding="utf-8"
+            )
+        (ROOT / f'{c["key"]}.html').write_text(
+            page(f'{c["label"]} · {SITE_TITLE}', months, c["key"], notions_page(months, c)), encoding="utf-8"
         )
-    (ROOT / "notions.html").write_text(
-        page(f"Notions · {SITE_TITLE}", months, "notions", notions_page(months)), encoding="utf-8"
-    )
     print("OK:", ", ".join(m["slug"] for m in months))
 
 

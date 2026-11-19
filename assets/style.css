@@ -200,3 +200,14 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
 .summary { border: 2px solid var(--green); }
 .badge.sum { background: var(--green); }
 .summary h3.sh::before { background: var(--green); }
+
+/* Grammar (azul) */
+.ntag.g:hover { color: var(--blue); border-color: var(--blue); }
+.mats.nots.g a { border-color: var(--blue); }
+.notion.g { border-left-color: var(--blue); }
+.notion.g:target { box-shadow: 0 0 0 3px var(--blue); }
+.notion.g .btn.read { background: var(--blue); }
+.summary.g { border-color: var(--blue); }
+.summary.g .badge.sum { background: var(--blue); }
+.summary.g h3.sh::before { background: var(--blue); }
+.crumbs.g a { color: var(--blue); }
