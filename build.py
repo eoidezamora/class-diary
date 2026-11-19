@@ -75,7 +75,7 @@ def tag_headings(body_html, sid, num):
         for n in NOTIONS:
             for r in n["refs"]:
                 if r[0] == num and len(r) > 2 and slug.startswith(sid + "-" + r[2]):
-                    tags.append(f'<a class="ntag" href="notions.html#{n["id"]}">{html.escape(n["title"])}</a>')
+                    tags.append(f'<a class="ntag" href="notions.html#{n["id"]}"><span>Notion&nbsp;·</span> {html.escape(n["title"])}</a>')
                     break
         tag_html = f'<div class="ntags">{"".join(tags)}</div>' if tags else ""
         return f'<h3 id="{slug}">{inner}</h3>{tag_html}'
