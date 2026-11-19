@@ -32,10 +32,10 @@
     ]
   },
   {
-    "id": "lugar",
-    "title": "Lugar y dirección",
-    "en": "Place and direction",
-    "desc": "in / to the north of, in u on, by / near / next to, preposiciones para situar un lugar.",
+    "id": "localidad",
+    "title": "Situar una localidad en un país",
+    "en": "Locating a town in a country",
+    "desc": "Where in Spain are you from? in the north-west of…, to the west of…, next to / near / by the river…, a small city in the north of…",
     "refs": [
       [
         9,
@@ -43,11 +43,39 @@
       ],
       [
         11,
+        "Where in Spain are you from?"
+      ],
+      [
+        11,
         "Situar un lugar · preposiciones"
       ],
       [
+        11,
+        "Describe tu ciudad o tu pueblo"
+      ]
+    ]
+  },
+  {
+    "id": "lugar",
+    "title": "Dónde está algo: in u on",
+    "en": "Position: in or on",
+    "desc": "in = dentro (in my bag); on = apoyado, colgado o ensartado (on a key ring, on the wall).",
+    "refs": [
+      [
         13,
         "in o on: on a key ring"
+      ]
+    ]
+  },
+  {
+    "id": "ciudad",
+    "title": "Calles y espacios de la ciudad",
+    "en": "Streets and public spaces",
+    "desc": "square, circus, crescent, roundabout, road, street.",
+    "refs": [
+      [
+        13,
+        "Calles y plazas en el Reino Unido"
       ]
     ]
   },
