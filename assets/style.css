@@ -211,3 +211,16 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
 .summary.g .badge.sum { background: var(--blue); }
 .summary.g h3.sh::before { background: var(--blue); }
 .crumbs.g a { color: var(--blue); }
+
+/* Vocabulary (amarillo oscuro) */
+:root { --voc: #B88A00; }
+@media (prefers-color-scheme: dark) { :root { --voc: #E5B82E; } }
+.ntag.v:hover { color: var(--voc); border-color: var(--voc); }
+.mats.nots.v a { border-color: var(--voc); }
+.notion.v { border-left-color: var(--voc); }
+.notion.v:target { box-shadow: 0 0 0 3px var(--voc); }
+.notion.v .btn.read { background: var(--voc); }
+.summary.v { border-color: var(--voc); }
+.summary.v .badge.sum { background: var(--voc); }
+.summary.v h3.sh::before { background: var(--voc); }
+.crumbs.v a { color: var(--voc); }

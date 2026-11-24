@@ -1,0 +1,230 @@
+[
+  {
+    "id": "motivos",
+    "title": "Motivos para estudiar inglés",
+    "en": "Reasons for learning English",
+    "desc": "to travel, for my job, because my family lives in the UK…",
+    "refs": [
+      [
+        1,
+        "Why do you study English?",
+        "pizarra-why"
+      ],
+      [
+        2,
+        "Repaso de motivos",
+        "pizarra-1-repaso"
+      ]
+    ]
+  },
+  {
+    "id": "saludos",
+    "title": "Saludos, despedidas y tratamientos",
+    "en": "Greetings and forms of address",
+    "desc": "How are you?, See you!, This is…, Mr, Mrs, Ms, sir, madam.",
+    "refs": [
+      [
+        2,
+        "Greetings & goodbyes",
+        "pizarra-2-greetings"
+      ],
+      [
+        2,
+        "Tratamientos",
+        "tratamientos"
+      ]
+    ]
+  },
+  {
+    "id": "paises",
+    "title": "Países y nacionalidades",
+    "en": "Countries and nationalities",
+    "desc": "Continentes, países, nacionalidades y las Islas Británicas.",
+    "refs": [
+      [
+        5,
+        "The World Quiz",
+        "the-world-quiz"
+      ],
+      [
+        5,
+        "Mayúsculas y acento",
+        "notas-de-lengua"
+      ],
+      [
+        6,
+        "island, isle, Ireland, Iceland",
+        "pronunciacion-island"
+      ],
+      [
+        6,
+        "Las Islas Británicas",
+        "las-islas-britanicas"
+      ],
+      [
+        7,
+        "How did the UK grow?",
+        "how-did-the-uk-grow"
+      ],
+      [
+        8,
+        "País o nacionalidad",
+        "pais-o-nacionalidad"
+      ]
+    ]
+  },
+  {
+    "id": "datos",
+    "title": "Datos personales",
+    "en": "Personal information",
+    "desc": "first name, surname, address, postcode, email, phone number.",
+    "refs": [
+      [
+        12,
+        "What's your…?",
+        "preguntar-datos-personales"
+      ],
+      [
+        12,
+        "Deletrear un email",
+        "como-se-deletrea"
+      ],
+      [
+        14,
+        "What's her…?",
+        "preguntar-por-otra"
+      ]
+    ]
+  },
+  {
+    "id": "calendario",
+    "title": "Días, meses y fechas",
+    "en": "Days, months and dates",
+    "desc": "weekdays, the weekend, yesterday, tomorrow, los meses y los ordinales.",
+    "refs": [
+      [
+        10,
+        "Días de la semana",
+        "dias-de-la-semana"
+      ],
+      [
+        11,
+        "Fechas y meses",
+        "fechas"
+      ]
+    ]
+  },
+  {
+    "id": "objetos",
+    "title": "Objetos de clase y personales",
+    "en": "Classroom and personal objects",
+    "desc": "Lo que hay en clase y lo que llevamos en el bolso, la cartera o el bolsillo.",
+    "refs": [
+      [
+        3,
+        "glasses, classmates, notebook",
+        "notas-de-lengua"
+      ],
+      [
+        13,
+        "What's in your bag?",
+        "what-s-in-your-bag"
+      ],
+      [
+        14,
+        "En clase",
+        "pizarra-mas-vocabulario"
+      ]
+    ]
+  },
+  {
+    "id": "lugares",
+    "title": "Ciudad y paisaje",
+    "en": "Town and landscape",
+    "desc": "city, town, village; river, lake, mountains; square, circus, crescent, road, street.",
+    "refs": [
+      [
+        11,
+        "Ríos y lagos",
+        "situar-un-lugar-preposiciones"
+      ],
+      [
+        11,
+        "city, town, village…",
+        "situar-un-lugar-describe"
+      ],
+      [
+        13,
+        "Calles y plazas",
+        "calles-y-plazas"
+      ]
+    ]
+  },
+  {
+    "id": "fiestas",
+    "title": "Fiestas: Halloween y Bonfire Night",
+    "en": "Festivals",
+    "desc": "Halloween, All Saints' Day, Eve, trick or treat, Guy Fawkes' Night.",
+    "refs": [
+      [
+        7,
+        "Halloween",
+        "halloween"
+      ],
+      [
+        9,
+        "Bonfire Night",
+        "que-hicimos"
+      ]
+    ]
+  },
+  {
+    "id": "conversacion",
+    "title": "Conversación y videollamadas",
+    "en": "Conversation and video calls",
+    "desc": "Right, OK, Great, So…; You're on mute, Can you hear me?",
+    "refs": [
+      [
+        12,
+        "Mantener la conversación",
+        "mantener-la-conversacion"
+      ],
+      [
+        12,
+        "Videollamada",
+        "vocabulario-de-videollamada"
+      ]
+    ]
+  },
+  {
+    "id": "juegos",
+    "title": "Jugar en inglés",
+    "en": "Playing games",
+    "desc": "Hit!, Sunk!, Miss!, My turn, a tie, the winner; tell a lie, true or false.",
+    "refs": [
+      [
+        6,
+        "Verdad y mentira",
+        "verdad-y-mentira"
+      ],
+      [
+        11,
+        "Hit the Ships",
+        "pizarra-hit-the-ships"
+      ]
+    ]
+  },
+  {
+    "id": "ring",
+    "title": "Familias de palabras: ring",
+    "en": "Word families: ring",
+    "desc": "ring, earring, key ring, bullring, boxing ring.",
+    "refs": [
+      [
+        13,
+        "Muchos tipos de ring",
+        "muchos-tipos-de-ring"
+      ]
+    ]
+  }
+]

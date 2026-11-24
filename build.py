@@ -137,6 +137,9 @@ COLLECTIONS = [
     {"key": "grammar", "label": "Grammar", "tag": "Grammar", "prefix": "grammar", "cls": "g",
      "intro": "Los puntos de gramática que hemos trabajado y las sesiones en que aparecen. "
               "Cada punto es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte."},
+    {"key": "vocabulary", "label": "Vocabulary", "tag": "Vocabulary", "prefix": "vocab", "cls": "v",
+     "intro": "El vocabulario que hemos trabajado, agrupado por temas, y las sesiones en que aparece. "
+              "Cada tema es un artículo con todas las palabras ordenadas; pulsa una sesión para ir a esa parte."},
 ]
 for _c in COLLECTIONS:
     _p = CONTENT / f'{_c["key"]}.json'
