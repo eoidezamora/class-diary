@@ -86,6 +86,14 @@
     ],
     "quizlet": [
       {
+        "title": "Países y nacionalidades",
+        "url": "https://quizlet.com/es/1239287525/a2-eoi-zamora-countries-and-nationalities-flash-cards/"
+      },
+      {
+        "title": "Continentes y puntos cardinales",
+        "url": "https://quizlet.com/es/1239292632/a2-eoi-zamora-continents-and-compass-points-flash-cards/"
+      },
+      {
         "title": "Around the World (diagrama)",
         "url": "https://quizlet.com/246195678/around-the-world-diagram/"
       },
@@ -96,14 +104,6 @@
       {
         "title": "Where are you from? The British Isles (diagrama)",
         "url": "https://quizlet.com/239354929/where-are-you-from-the-british-isles-diagram/"
-      },
-      {
-        "title": "Países y nacionalidades",
-        "url": "https://quizlet.com/es/1239287525/a2-eoi-zamora-countries-and-nationalities-flash-cards/"
-      },
-      {
-        "title": "Continentes y puntos cardinales",
-        "url": "https://quizlet.com/es/1239292632/a2-eoi-zamora-continents-and-compass-points-flash-cards/"
       }
     ]
   },
@@ -184,6 +184,10 @@
     ],
     "quizlet": [
       {
+        "title": "Objetos de clase y personales",
+        "url": "https://quizlet.com/es/1239287487/a2-eoi-zamora-personal-and-classroom-objects-flash-cards/"
+      },
+      {
         "title": "Classroom Objects 1 (diagrama)",
         "url": "https://quizlet.com/235608255/classroom-objects-1-diagram/"
       },
@@ -194,10 +198,6 @@
       {
         "title": "Classroom Objects 3 (diagrama)",
         "url": "https://quizlet.com/235618141/classroom-objects-3-diagram/"
-      },
-      {
-        "title": "Objetos de clase y personales",
-        "url": "https://quizlet.com/es/1239287487/a2-eoi-zamora-personal-and-classroom-objects-flash-cards/"
       }
     ]
   },
