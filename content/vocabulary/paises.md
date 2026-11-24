@@ -2,35 +2,35 @@
 
 | País | Pronunciación (RP) | Nacionalidad | Pronunciación (RP) |
 | --- | --- | --- | --- |
-| *Spain* | /speɪn/ | *Spanish* | /ˈspænɪʃ/ |
-| *England* | /ˈɪŋɡlənd/ | *English* | /ˈɪŋɡlɪʃ/ |
-| *Scotland* | /ˈskɒtlənd/ | *Scottish* | /ˈskɒtɪʃ/ |
-| *Wales* | /weɪlz/ | *Welsh* | /welʃ/ |
-| *Ireland* | /ˈaɪələnd/ | *Irish* | /ˈaɪrɪʃ/ |
-| *the UK* | /ðə ˌjuː ˈkeɪ/ | *British* | /ˈbrɪtɪʃ/ |
-| *France* | /frɑːns/ | *French* | /frentʃ/ |
-| *Germany* | /ˈdʒɜːməni/ | *German* | /ˈdʒɜːmən/ |
-| *the Netherlands* | /ðə ˈneðələndz/ | *Dutch* | /dʌtʃ/ |
-| *Switzerland* | /ˈswɪtsələnd/ | *Swiss* | /swɪs/ |
-| *Italy* | /ˈɪtəli/ | *Italian* | /ɪˈtæliən/ |
-| *Poland* | /ˈpəʊlənd/ | *Polish* | /ˈpəʊlɪʃ/ |
-| *Hungary* | /ˈhʌŋɡəri/ | *Hungarian* | /hʌŋˈɡeəriən/ |
-| *Russia* | /ˈrʌʃə/ | *Russian* | /ˈrʌʃn/ |
-| *Romania* | /ruˈmeɪniə/ | *Romanian* | /ruˈmeɪniən/ |
-| *Turkey* | /ˈtɜːki/ | *Turkish* | /ˈtɜːkɪʃ/ |
-| *the USA* | /ðə ˌjuː es ˈeɪ/ | *American* | /əˈmerɪkən/ |
-| *Mexico* | /ˈmeksɪkəʊ/ | *Mexican* | /ˈmeksɪkən/ |
-| *Colombia* | /kəˈlʌmbiə/ | *Colombian* | /kəˈlʌmbiən/ |
-| *Peru* | /pəˈruː/ | *Peruvian* | /pəˈruːviən/ |
-| *Brazil* | /brəˈzɪl/ | *Brazilian* | /brəˈzɪliən/ |
-| *Argentina* | /ˌɑːdʒənˈtiːnə/ | *Argentinian* | /ˌɑːdʒənˈtɪniən/ |
-| *Egypt* | /ˈiːdʒɪpt/ | *Egyptian* | /iˈdʒɪpʃn/ |
-| *Nigeria* | /naɪˈdʒɪəriə/ | *Nigerian* | /naɪˈdʒɪəriən/ |
-| *Japan* | /dʒəˈpæn/ | *Japanese* | /ˌdʒæpəˈniːz/ |
-| *China* | /ˈtʃaɪnə/ | *Chinese* | /ˌtʃaɪˈniːz/ |
-| *India* | /ˈɪndiə/ | *Indian* | /ˈɪndiən/ |
-| *Vietnam* | /ˌvjetˈnæm/ | *Vietnamese* | /ˌvjetnəˈmiːz/ |
-| *Australia* | /ɒˈstreɪliə/ | *Australian* | /ɒˈstreɪliən/ |
+| <img class="flag" src="https://flagcdn.com/w40/es.png" alt="" width="24" height="16"> *Spain* | /speɪn/ | *Spanish* | /ˈspænɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/gb-eng.png" alt="" width="24" height="16"> *England* | /ˈɪŋɡlənd/ | *English* | /ˈɪŋɡlɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/gb-sct.png" alt="" width="24" height="16"> *Scotland* | /ˈskɒtlənd/ | *Scottish* | /ˈskɒtɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/gb-wls.png" alt="" width="24" height="16"> *Wales* | /weɪlz/ | *Welsh* | /welʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/ie.png" alt="" width="24" height="16"> *Ireland* | /ˈaɪələnd/ | *Irish* | /ˈaɪrɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/gb.png" alt="" width="24" height="16"> *the UK* | /ðə ˌjuː ˈkeɪ/ | *British* | /ˈbrɪtɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/fr.png" alt="" width="24" height="16"> *France* | /frɑːns/ | *French* | /frentʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/de.png" alt="" width="24" height="16"> *Germany* | /ˈdʒɜːməni/ | *German* | /ˈdʒɜːmən/ |
+| <img class="flag" src="https://flagcdn.com/w40/nl.png" alt="" width="24" height="16"> *the Netherlands* | /ðə ˈneðələndz/ | *Dutch* | /dʌtʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/ch.png" alt="" width="24" height="16"> *Switzerland* | /ˈswɪtsələnd/ | *Swiss* | /swɪs/ |
+| <img class="flag" src="https://flagcdn.com/w40/it.png" alt="" width="24" height="16"> *Italy* | /ˈɪtəli/ | *Italian* | /ɪˈtæliən/ |
+| <img class="flag" src="https://flagcdn.com/w40/pl.png" alt="" width="24" height="16"> *Poland* | /ˈpəʊlənd/ | *Polish* | /ˈpəʊlɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/hu.png" alt="" width="24" height="16"> *Hungary* | /ˈhʌŋɡəri/ | *Hungarian* | /hʌŋˈɡeəriən/ |
+| <img class="flag" src="https://flagcdn.com/w40/ru.png" alt="" width="24" height="16"> *Russia* | /ˈrʌʃə/ | *Russian* | /ˈrʌʃn/ |
+| <img class="flag" src="https://flagcdn.com/w40/ro.png" alt="" width="24" height="16"> *Romania* | /ruˈmeɪniə/ | *Romanian* | /ruˈmeɪniən/ |
+| <img class="flag" src="https://flagcdn.com/w40/tr.png" alt="" width="24" height="16"> *Turkey* | /ˈtɜːki/ | *Turkish* | /ˈtɜːkɪʃ/ |
+| <img class="flag" src="https://flagcdn.com/w40/us.png" alt="" width="24" height="16"> *the USA* | /ðə ˌjuː es ˈeɪ/ | *American* | /əˈmerɪkən/ |
+| <img class="flag" src="https://flagcdn.com/w40/mx.png" alt="" width="24" height="16"> *Mexico* | /ˈmeksɪkəʊ/ | *Mexican* | /ˈmeksɪkən/ |
+| <img class="flag" src="https://flagcdn.com/w40/co.png" alt="" width="24" height="16"> *Colombia* | /kəˈlʌmbiə/ | *Colombian* | /kəˈlʌmbiən/ |
+| <img class="flag" src="https://flagcdn.com/w40/pe.png" alt="" width="24" height="16"> *Peru* | /pəˈruː/ | *Peruvian* | /pəˈruːviən/ |
+| <img class="flag" src="https://flagcdn.com/w40/br.png" alt="" width="24" height="16"> *Brazil* | /brəˈzɪl/ | *Brazilian* | /brəˈzɪliən/ |
+| <img class="flag" src="https://flagcdn.com/w40/ar.png" alt="" width="24" height="16"> *Argentina* | /ˌɑːdʒənˈtiːnə/ | *Argentinian* | /ˌɑːdʒənˈtɪniən/ |
+| <img class="flag" src="https://flagcdn.com/w40/eg.png" alt="" width="24" height="16"> *Egypt* | /ˈiːdʒɪpt/ | *Egyptian* | /iˈdʒɪpʃn/ |
+| <img class="flag" src="https://flagcdn.com/w40/ng.png" alt="" width="24" height="16"> *Nigeria* | /naɪˈdʒɪəriə/ | *Nigerian* | /naɪˈdʒɪəriən/ |
+| <img class="flag" src="https://flagcdn.com/w40/jp.png" alt="" width="24" height="16"> *Japan* | /dʒəˈpæn/ | *Japanese* | /ˌdʒæpəˈniːz/ |
+| <img class="flag" src="https://flagcdn.com/w40/cn.png" alt="" width="24" height="16"> *China* | /ˈtʃaɪnə/ | *Chinese* | /ˌtʃaɪˈniːz/ |
+| <img class="flag" src="https://flagcdn.com/w40/in.png" alt="" width="24" height="16"> *India* | /ˈɪndiə/ | *Indian* | /ˈɪndiən/ |
+| <img class="flag" src="https://flagcdn.com/w40/vn.png" alt="" width="24" height="16"> *Vietnam* | /ˌvjetˈnæm/ | *Vietnamese* | /ˌvjetnəˈmiːz/ |
+| <img class="flag" src="https://flagcdn.com/w40/au.png" alt="" width="24" height="16"> *Australia* | /ɒˈstreɪliə/ | *Australian* | /ɒˈstreɪliən/ |
 
 ### Continentes y geografía británica
 
@@ -43,8 +43,8 @@
 | *Australasia* · *Oceania* | /ˌɒstrəˈleɪʒə/ · /ˌəʊʃiˈɑːniə/ | Oceanía |
 | *the British Isles* | /ðə ˈbrɪtɪʃ aɪlz/ | las Islas Británicas |
 | *Great Britain* | /ˌɡreɪt ˈbrɪtn/ | Gran Bretaña |
-| *Northern Ireland* | /ˌnɔːðən ˈaɪələnd/ | Irlanda del Norte |
+| <img class="flag" src="https://flagcdn.com/w40/gb-nir.png" alt="" width="24" height="16"> *Northern Ireland* | /ˌnɔːðən ˈaɪələnd/ | Irlanda del Norte |
 | *an island* · *an isle* | /ˈaɪlənd/ · /aɪl/ | una isla |
-| *Iceland* | /ˈaɪslənd/ | Islandia |
+| <img class="flag" src="https://flagcdn.com/w40/is.png" alt="" width="24" height="16"> *Iceland* | /ˈaɪslənd/ | Islandia |
 | *London* · *Edinburgh* | /ˈlʌndən/ · /ˈedɪnbrə/ | Londres · Edimburgo |
 | *Cardiff* · *Belfast* · *Dublin* | /ˈkɑːdɪf/ · /ˈbelfɑːst/ · /ˈdʌblɪn/ | |

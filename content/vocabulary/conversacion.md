@@ -1,14 +1,14 @@
 | Inglés | Pronunciación (RP) | Español |
 | --- | --- | --- |
-| *Right.* · *OK.* | /raɪt/ · /əʊˈkeɪ/ | Vale. |
+| <span class="ico">👍</span> *Right.* · *OK.* | /raɪt/ · /əʊˈkeɪ/ | Vale. |
 | *Fine.* · *Great.* | /faɪn/ · /ɡreɪt/ | Bien. · Genial. |
 | *So…* · *And…* | /səʊ/ · /ænd/ | Entonces… · Y… |
-| *Sorry?* | /ˈsɒri/ | ¿Perdón? ¿Cómo? |
+| <span class="ico">❓</span> *Sorry?* | /ˈsɒri/ | ¿Perdón? ¿Cómo? |
 | *Can you repeat that, please?* | /kən juː rɪˈpiːt ðæt pliːz/ | ¿Puedes repetirlo, por favor? |
-| *Is that right?* | /ɪz ðæt raɪt/ | ¿Es correcto? |
+| <span class="ico">✔️</span> *Is that right?* | /ɪz ðæt raɪt/ | ¿Es correcto? |
 | *That's right.* · *That's correct.* | /ðæts raɪt/ · /ðæts kəˈrekt/ | Correcto. |
-| *I think…* · *I'm not sure.* | /aɪ θɪŋk/ · /aɪm nɒt ʃɔː/ | Creo que… · No estoy seguro/a. |
-| *Really?* · *Me too!* | /ˈrɪəli/ · /miː tuː/ | ¿En serio? · ¡Yo también! |
-| *You're on mute.* | /jɔːr ɒn mjuːt/ | Tienes el micro silenciado. |
-| *Can you hear me?* | /kən juː hɪə miː/ | ¿Me oyes? |
-| *turn on* · *turn off* | /tɜːn ɒn/ · /tɜːn ɒf/ | encender · apagar |
+| <span class="ico">💭</span> *I think…* · *I'm not sure.* | /aɪ θɪŋk/ · /aɪm nɒt ʃɔː/ | Creo que… · No estoy seguro/a. |
+| <span class="ico">😮</span> *Really?* · *Me too!* | /ˈrɪəli/ · /miː tuː/ | ¿En serio? · ¡Yo también! |
+| <span class="ico">🔇</span> *You're on mute.* | /jɔːr ɒn mjuːt/ | Tienes el micro silenciado. |
+| <span class="ico">👂</span> *Can you hear me?* | /kən juː hɪə miː/ | ¿Me oyes? |
+| <span class="ico">🔌</span> *turn on* · *turn off* | /tɜːn ɒn/ · /tɜːn ɒf/ | encender · apagar |

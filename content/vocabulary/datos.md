@@ -1,16 +1,16 @@
 | Inglés | Pronunciación (RP) | Español |
 | --- | --- | --- |
-| *first name* | /ˈfɜːst neɪm/ | nombre |
+| <span class="ico">🪪</span> *first name* | /ˈfɜːst neɪm/ | nombre |
 | *surname* | /ˈsɜːneɪm/ | apellido |
-| *address* | /əˈdres/ | dirección |
-| *postcode* | /ˈpəʊstkəʊd/ | código postal |
-| *email address* | /ˈiːmeɪl əˈdres/ | correo electrónico |
-| *phone number* | /ˈfəʊn ˌnʌmbə/ | número de teléfono |
-| *mobile* · *landline* | /ˈməʊbaɪl/ · /ˈlændlaɪn/ | móvil · fijo |
-| *date of birth* | /ˌdeɪt əv ˈbɜːθ/ | fecha de nacimiento |
+| <span class="ico">🏠</span> *address* | /əˈdres/ | dirección |
+| <span class="ico">📮</span> *postcode* | /ˈpəʊstkəʊd/ | código postal |
+| <span class="ico">📧</span> *email address* | /ˈiːmeɪl əˈdres/ | correo electrónico |
+| <span class="ico">📞</span> *phone number* | /ˈfəʊn ˌnʌmbə/ | número de teléfono |
+| <span class="ico">📱</span> *mobile* · *landline* | /ˈməʊbaɪl/ · /ˈlændlaɪn/ | móvil · fijo |
+| <span class="ico">🎂</span> *date of birth* | /ˌdeɪt əv ˈbɜːθ/ | fecha de nacimiento |
 | *place of birth* | /ˌpleɪs əv ˈbɜːθ/ | lugar de nacimiento |
-| *birthday* | /ˈbɜːθdeɪ/ | cumpleaños |
-| *nationality* | /ˌnæʃəˈnæləti/ | nacionalidad |
+| <span class="ico">🎂</span> *birthday* | /ˈbɜːθdeɪ/ | cumpleaños |
+| <span class="ico">🌍</span> *nationality* | /ˌnæʃəˈnæləti/ | nacionalidad |
 | *country* | /ˈkʌntri/ | país |
 | *at* (@) · *dot* (.) | /æt/ · /dɒt/ | arroba · punto |
 | *dash* / *hyphen* (-) | /dæʃ/ · /ˈhaɪfn/ | guion |
