@@ -224,3 +224,18 @@ th, td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; 
 .summary.v .badge.sum { background: var(--voc); }
 .summary.v h3.sh::before { background: var(--voc); }
 .crumbs.v a { color: var(--voc); }
+
+/* Functions (rojo) */
+.ntag.f:hover { color: var(--red); border-color: var(--red); }
+.mats.nots.f a { border-color: var(--red); }
+.notion.f { border-left-color: var(--red); }
+.notion.f:target { box-shadow: 0 0 0 3px var(--red); }
+.notion.f .btn.read { background: var(--red); }
+.summary.f { border-color: var(--red); }
+.summary.f .badge.sum { background: var(--red); }
+.summary.f h3.sh::before { background: var(--red); }
+.crumbs.f a { color: var(--red); }
+/* Quizlet */
+.qzs { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+.qz { text-decoration: none; background: #4255FF; color: #fff; border-radius: 999px; padding: 4px 12px; font-size: .85rem; font-weight: 700; }
+@media (min-width: 700px) { .months { flex-wrap: wrap; overflow: visible; } }

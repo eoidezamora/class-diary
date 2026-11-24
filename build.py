@@ -132,14 +132,24 @@ MATERIALS = load_materials()
 
 COLLECTIONS = [
     {"key": "notions", "label": "Notions", "tag": "Notion", "prefix": "notion", "cls": "",
-     "intro": "Las ideas que expresamos en inglés (lugar, cantidad, tiempo…) y las sesiones en que las hemos trabajado. "
-              "Cada notion es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte."},
+     "badge": "Artículo", "badge_sub": "Todo lo visto, explicado y ordenado",
+     "intro": "Las <b>notions</b> son las <b>ideas</b> que expresamos con la lengua: la cantidad y los números, el tiempo y las fechas, "
+              "dónde está algo, el contenido y el envase… Responden a la pregunta <i>¿qué idea quiero expresar?</i> "
+              "Cada una es un artículo que reúne la gramática y las palabras que necesitamos, con enlaces a las sesiones."},
+    {"key": "functions", "label": "Functions", "tag": "Function", "prefix": "function", "cls": "f",
+     "badge": "Artículo", "badge_sub": "Todo lo visto, explicado y ordenado",
+     "intro": "Las <b>functions</b> son lo que <b>hacemos</b> con la lengua: saludar y despedirnos, presentarnos, pedir algo, "
+              "corregir información, deletrear, confirmar un dato… Responden a la pregunta <i>¿qué quiero hacer?</i> "
+              "Cada una es un artículo con las fórmulas y ejemplos, y enlaces a las sesiones."},
     {"key": "grammar", "label": "Grammar", "tag": "Grammar", "prefix": "grammar", "cls": "g",
-     "intro": "Los puntos de gramática que hemos trabajado y las sesiones en que aparecen. "
+     "badge": "Artículo", "badge_sub": "Todo lo visto, explicado y ordenado",
+     "intro": "La <b>grammar</b> explica <b>cómo se construyen</b> las frases: el verbo <i>be</i>, las preguntas, los demostrativos, "
+              "las preposiciones… Responde a la pregunta <i>¿cómo se forma?</i> "
               "Cada punto es un artículo con todo lo visto en clase; pulsa una sesión para ir a esa parte."},
     {"key": "vocabulary", "label": "Vocabulary", "tag": "Vocabulary", "prefix": "vocab", "cls": "v",
-     "intro": "El vocabulario que hemos trabajado, agrupado por temas, y las sesiones en que aparece. "
-              "Cada tema es un artículo con todas las palabras ordenadas; pulsa una sesión para ir a esa parte."},
+     "badge": "Lista", "badge_sub": "Pronunciación británica (RP)",
+     "intro": "El <b>vocabulary</b> son las <b>palabras</b>, en listas por temas con su pronunciación en inglés británico (RP) "
+              "y su traducción, y con sets de Quizlet para practicar. Responde a la pregunta <i>¿qué palabras necesito?</i>"},
 ]
 for _c in COLLECTIONS:
     _p = CONTENT / f'{_c["key"]}.json'
@@ -192,6 +202,14 @@ def materials_page(months):
     )
 
 
+def quizlet_html(n):
+    q = n.get("quizlet") or []
+    if not q:
+        return ""
+    links = "".join(f'<a class="qz" href="{html.escape(x["url"])}" target="_blank" rel="noopener">Quizlet · {html.escape(x["title"])}</a>' for x in q)
+    return f'<div class="qzs">{links}</div>'
+
+
 def extract_section(body_html, anchor):
     m = re.search(rf'<h3 id="{re.escape(anchor)}">(.*?)</h3>', body_html)
     if not m:
@@ -227,16 +245,16 @@ def notion_article(n, months, c):
     summary = ""
     if summary_path.exists():
         summary = (
-            f'<article class="session summary {c["cls"]}" id="resumen"><header><span class="badge sum">Artículo</span>'
-            '<time>Todo lo visto, explicado y ordenado</time></header>'
+            f'<article class="session summary {c["cls"]}" id="resumen"><header><span class="badge sum">{c["badge"]}</span>'
+            f'<time>{c["badge_sub"]}</time></header>' + quizlet_html(n)
             + render_md(summary_path.read_text(encoding="utf-8")).replace("<h3>", "<h3 class=\"sh\">")
             + "</article>"
         )
-        toc.insert(0, '<a href="#resumen">Artículo<small>Todo junto</small></a>')
+        toc.insert(0, f'<a href="#resumen">{c["badge"]}<small>Todo junto</small></a>')
     return (
         f'<p class="crumbs {c["cls"]}"><a href="{c["key"]}.html">{c["label"]}</a> ›</p>'
         f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
-        f'<p class="intro">{html.escape(n["desc"])} Primero, el artículo con todo lo visto, explicado y ordenado; después, lo que vimos en cada sesión.</p>'
+        f'<p class="intro">{html.escape(n["desc"])} Primero, todo junto; después, lo que vimos en cada sesión.</p>'
         f'<div class="toc">{"".join(toc)}</div>' + summary
         + ('<h2 class="section-title">Sesión a sesión</h2>' if parts else "") + "".join(parts)
     )
@@ -255,8 +273,8 @@ def notions_page(months, c):
                 refs.append(f'<li><a href="{c["prefix"]}-{n["id"]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
         cards.append(
             f'<article class="notion {c["cls"]}" id="{n["id"]}"><h2><a href="{c["prefix"]}-{n["id"]}.html">{html.escape(n["title"])}</a> <small>{html.escape(n["en"])}</small></h2>'
-            f'<p>{html.escape(n["desc"])}</p><ul>{"".join(refs)}</ul>'
-            f'<a class="btn read" href="{c["prefix"]}-{n["id"]}.html">Leer el artículo completo</a></article>'
+            f'<p>{html.escape(n["desc"])}</p>{quizlet_html(n)}<ul>{"".join(refs)}</ul>'
+            f'<a class="btn read" href="{c["prefix"]}-{n["id"]}.html">{"Ver la lista completa" if c["key"] == "vocabulary" else "Leer el artículo completo"}</a></article>'
         )
     return (
         f'<h1 class="month-title">{c["label"]}</h1>'

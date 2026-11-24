@@ -1,22 +1,14 @@
-### Hit the Ships (los barquitos)
-
-| Inglés | Español |
-| --- | --- |
-| *Hit!* | ¡Tocado! |
-| *Sunk!* (*sink – sank – sunk*) | ¡Hundido! |
-| *Miss!* / *Nothing!* | ¡Agua! |
-| *My turn. · I go!* | Me toca. |
-| *Your turn. · You go!* | Te toca. |
-| *I won. · I lost.* | Gané. · Perdí. |
-| *a tie* /taɪ/ | un empate |
-| *the winner* · *the loser* | el ganador · el perdedor |
-| *She's a master! · He's an ace!* | ¡Es un/a crack! |
-
-### Two truths and a lie
-
-| Inglés | Español |
-| --- | --- |
-| *tell a lie* · *tell the truth* | mentir · decir la verdad (nunca *say the truth*) |
-| *true* · *false* | verdadero · falso |
-| *a liar* | un/a mentiroso/a |
-| *Liar, liar, pants on fire!* | cancioncilla para quien miente (en broma) |
+| Inglés | Pronunciación (RP) | Español |
+| --- | --- | --- |
+| *Hit!* | /hɪt/ | ¡Tocado! |
+| *Sunk!* (*sink – sank – sunk*) | /sʌŋk/ | ¡Hundido! |
+| *Miss!* · *Nothing!* | /mɪs/ · /ˈnʌθɪŋ/ | ¡Agua! |
+| *a square* | /skweə/ | una casilla |
+| *My turn.* · *Your turn.* | /maɪ tɜːn/ · /jɔː tɜːn/ | Me toca. · Te toca. |
+| *I won.* · *I lost.* | /aɪ wʌn/ · /aɪ lɒst/ | Gané. · Perdí. |
+| *a tie* | /taɪ/ | un empate |
+| *the winner* · *the loser* | /ˈwɪnə/ · /ˈluːzə/ | el ganador · el perdedor |
+| *a master* · *an ace* | /ˈmɑːstə/ · /eɪs/ | un/a crack |
+| *tell a lie* · *tell the truth* | /tel ə laɪ/ · /tel ðə truːθ/ | mentir · decir la verdad |
+| *true* · *false* | /truː/ · /fɔːls/ | verdadero · falso |
+| *a liar* | /ˈlaɪə/ | un/a mentiroso/a |

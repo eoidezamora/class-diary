@@ -94,42 +94,6 @@
     ]
   },
   {
-    "id": "ciudad",
-    "title": "Calles y espacios de la ciudad",
-    "en": "Streets and public spaces",
-    "desc": "square, circus, crescent, roundabout, road, street.",
-    "refs": [
-      [
-        13,
-        "Calles y plazas en el Reino Unido",
-        "calles-y-plazas"
-      ]
-    ]
-  },
-  {
-    "id": "objetos",
-    "title": "Identificar objetos",
-    "en": "Identifying objects",
-    "desc": "What's this? It's a coin. What are those? They're scissors. Lo que llevamos en el bolso, el bolsillo o la clase.",
-    "refs": [
-      [
-        13,
-        "What's in your bag?",
-        "what-s-in-your-bag"
-      ],
-      [
-        14,
-        "What's this? Is it a…?",
-        "what-s-this"
-      ],
-      [
-        14,
-        "Vocabulario de clase",
-        "pizarra-mas-vocabulario"
-      ]
-    ]
-  },
-  {
     "id": "procedencia",
     "title": "Procedencia y nacionalidad",
     "en": "Origin and nationality",
@@ -200,57 +164,6 @@
         13,
         "a bottle of water / a water bottle",
         "contenido-o-envase"
-      ]
-    ]
-  },
-  {
-    "id": "corregir",
-    "title": "Afirmar, negar y corregir información",
-    "en": "Correcting information",
-    "desc": "be en negativa (she's not, isn't), also y too, confirmar y corregir datos.",
-    "refs": [
-      [
-        4,
-        "Corregir con not",
-        "para-corregir"
-      ],
-      [
-        6,
-        "Dos formas de negar",
-        "dos-formas-de-negar"
-      ],
-      [
-        12,
-        "Confirmar y corregir",
-        "confirmar-corregir"
-      ]
-    ]
-  },
-  {
-    "id": "deletrear",
-    "title": "Deletrear e identificar",
-    "en": "Spelling",
-    "desc": "El alfabeto, How do you spell it?, cómo se deletrea un email.",
-    "refs": [
-      [
-        2,
-        "El alfabeto",
-        "que-hicimos"
-      ],
-      [
-        3,
-        "The Alphabet Song",
-        "pizarra-the-alphabet"
-      ],
-      [
-        12,
-        "Deletrear un email",
-        "como-se-deletrea"
-      ],
-      [
-        14,
-        "How do you spell it?",
-        "preguntar-por-otra"
       ]
     ]
   },

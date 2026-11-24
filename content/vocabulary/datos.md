@@ -1,15 +1,18 @@
-| Dato | Pregunta |
-| --- | --- |
-| *first name* (nombre) | *What's your first name?* |
-| *surname* (apellido) | *What's your surname?* |
-| *address* (dirección) | *What's your address?* |
-| *postcode* (código postal) | *What's your postcode?* |
-| *email address* | *What's your email address?* |
-| *phone number* · *mobile* · *landline* | *What's your phone number?* |
-| *date of birth* (fecha de nacimiento) | *When were you born?* |
-| *place of birth* (lugar de nacimiento) | *Where were you born?* |
-| *nationality* /ˌnæʃəˈnæləti/ | *Where are you from?* |
-
-- Para otra persona: *What's **her** / **his** surname?* · *When was **she** born?*
-- En los emails: **@** *at* · **.** *dot* · **-** *dash* · **_** *underscore* · **/** *slash*.
-- En las direcciones, el número va delante: *165, Florida Street*. **+** = *plus*.
+| Inglés | Pronunciación (RP) | Español |
+| --- | --- | --- |
+| *first name* | /ˈfɜːst neɪm/ | nombre |
+| *surname* | /ˈsɜːneɪm/ | apellido |
+| *address* | /əˈdres/ | dirección |
+| *postcode* | /ˈpəʊstkəʊd/ | código postal |
+| *email address* | /ˈiːmeɪl əˈdres/ | correo electrónico |
+| *phone number* | /ˈfəʊn ˌnʌmbə/ | número de teléfono |
+| *mobile* · *landline* | /ˈməʊbaɪl/ · /ˈlændlaɪn/ | móvil · fijo |
+| *date of birth* | /ˌdeɪt əv ˈbɜːθ/ | fecha de nacimiento |
+| *place of birth* | /ˌpleɪs əv ˈbɜːθ/ | lugar de nacimiento |
+| *birthday* | /ˈbɜːθdeɪ/ | cumpleaños |
+| *nationality* | /ˌnæʃəˈnæləti/ | nacionalidad |
+| *country* | /ˈkʌntri/ | país |
+| *at* (@) · *dot* (.) | /æt/ · /dɒt/ | arroba · punto |
+| *dash* / *hyphen* (-) | /dæʃ/ · /ˈhaɪfn/ | guion |
+| *underscore* (_) · *slash* (/) | /ˌʌndəˈskɔː/ · /slæʃ/ | guion bajo · barra |
+| *plus* (+) | /plʌs/ | más (prefijo) |

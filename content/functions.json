@@ -1,0 +1,171 @@
+[
+  {
+    "id": "saludar",
+    "title": "Saludar, presentar y despedirse",
+    "en": "Greeting, introducing and saying goodbye",
+    "desc": "Hello!, How are you?, This is Ana, See you!, Mr, Mrs, Ms.",
+    "refs": [
+      [
+        1,
+        "Presentarnos",
+        "actividades"
+      ],
+      [
+        2,
+        "I'm y my name's",
+        "notas-de-lengua"
+      ],
+      [
+        2,
+        "Greetings & goodbyes",
+        "pizarra-2-greetings"
+      ],
+      [
+        2,
+        "Tratamientos",
+        "tratamientos"
+      ]
+    ]
+  },
+  {
+    "id": "datos",
+    "title": "Pedir y dar datos personales",
+    "en": "Asking for and giving personal information",
+    "desc": "What's your surname?, Where were you born?, What's her phone number?",
+    "refs": [
+      [
+        10,
+        "Where were you born?",
+        "pizarra-to-be-born"
+      ],
+      [
+        12,
+        "What's your…?",
+        "preguntar-datos-personales"
+      ],
+      [
+        14,
+        "What's her…?",
+        "preguntar-por-otra"
+      ]
+    ]
+  },
+  {
+    "id": "deletrear",
+    "title": "Pedir y ofrecer el deletreo",
+    "en": "Spelling",
+    "desc": "How do you spell it?, Can you spell it, please?, Shall I spell it?, deletrear un email.",
+    "refs": [
+      [
+        3,
+        "The Alphabet Song",
+        "pizarra-the-alphabet"
+      ],
+      [
+        11,
+        "Can you spell it, please?",
+        "where-in-spain"
+      ],
+      [
+        12,
+        "Deletrear un email",
+        "como-se-deletrea"
+      ]
+    ]
+  },
+  {
+    "id": "corregir",
+    "title": "Corregir información",
+    "en": "Correcting information",
+    "desc": "She's not Mexican. She's Colombian. / She's Colombian, not Mexican.",
+    "refs": [
+      [
+        4,
+        "Corregir con not",
+        "para-corregir"
+      ],
+      [
+        6,
+        "Dos formas de negar",
+        "dos-formas-de-negar"
+      ],
+      [
+        6,
+        "also y too",
+        "also-y-too"
+      ],
+      [
+        6,
+        "Who's it by?",
+        "who-s-it-by"
+      ]
+    ]
+  },
+  {
+    "id": "confirmar",
+    "title": "Comprobar, confirmar y pedir repetición",
+    "en": "Checking, confirming and asking for repetition",
+    "desc": "Sorry?, Can you repeat that, please?, Is that right?, Yes, that's right.",
+    "refs": [
+      [
+        12,
+        "Confirmar, corregir y pedir repetición",
+        "confirmar-corregir"
+      ]
+    ]
+  },
+  {
+    "id": "conversacion",
+    "title": "Mantener la conversación, opinar y reaccionar",
+    "en": "Keeping the conversation going",
+    "desc": "Right, OK, Great, So…, And…; I think…; Really?, Me too!",
+    "refs": [
+      [
+        5,
+        "Dar tu opinión",
+        "para-dar-tu-opinion"
+      ],
+      [
+        12,
+        "Mantener la conversación activa",
+        "mantener-la-conversacion"
+      ],
+      [
+        12,
+        "Videollamada",
+        "vocabulario-de-videollamada"
+      ]
+    ]
+  },
+  {
+    "id": "identificar",
+    "title": "Identificar objetos",
+    "en": "Identifying things",
+    "desc": "What's this? – It's a coin. What are those? – They're scissors. I've got…",
+    "refs": [
+      [
+        13,
+        "What's in your bag?",
+        "what-s-in-your-bag"
+      ],
+      [
+        14,
+        "What's this? Is it a…?",
+        "what-s-this"
+      ]
+    ]
+  },
+  {
+    "id": "pedir",
+    "title": "Pedir algo",
+    "en": "Asking for things",
+    "desc": "Can I have a bottle of water, please?",
+    "refs": [
+      [
+        13,
+        "Can I have a bottle of water, please?",
+        "contenido-o-envase"
+      ]
+    ]
+  }
+]

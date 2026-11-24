@@ -1,19 +1,19 @@
-### Los días
-
-| Weekdays | The weekend |
-| --- | --- |
-| *Monday* (MON) · *Tuesday* (TUE) · *Wednesday* (WED) · *Thursday* (THU) · *Friday* (FRI) | *Saturday* (SAT) · *Sunday* (SUN) |
-
-*Wednesday* se pronuncia «wens-dei».
-
-### Los meses
-
-*January · February · March · April · May · June · July · August · September · October · November · December*
-
-### Palabras para situarse
-
-- *yesterday* (ayer) · *today* (hoy) · *tomorrow* (mañana) · *the day after tomorrow* (pasado mañana)
-- *a holiday* (día de fiesta) · *a bank holiday* (festivo en el Reino Unido)
-- *a birthday* (cumpleaños) · *date of birth* (fecha de nacimiento)
-
-Días y meses van siempre con **mayúscula**. Cómo se dicen las fechas y los años lo tienes en [Tiempo: días, fechas y años](notion-tiempo.html).
+| Inglés | Pronunciación (RP) | Español |
+| --- | --- | --- |
+| *Monday* | /ˈmʌndeɪ/ | lunes |
+| *Tuesday* | /ˈtjuːzdeɪ/ | martes |
+| *Wednesday* | /ˈwenzdeɪ/ | miércoles |
+| *Thursday* | /ˈθɜːzdeɪ/ | jueves |
+| *Friday* | /ˈfraɪdeɪ/ | viernes |
+| *Saturday* | /ˈsætədeɪ/ | sábado |
+| *Sunday* | /ˈsʌndeɪ/ | domingo |
+| *weekdays* · *the weekend* | /ˈwiːkdeɪz/ · /ðə ˌwiːkˈend/ | días laborables · el fin de semana |
+| *January* · *February* | /ˈdʒænjuəri/ · /ˈfebruəri/ | enero · febrero |
+| *March* · *April* | /mɑːtʃ/ · /ˈeɪprəl/ | marzo · abril |
+| *May* · *June* · *July* | /meɪ/ · /dʒuːn/ · /dʒuˈlaɪ/ | mayo · junio · julio |
+| *August* · *September* | /ˈɔːɡəst/ · /sepˈtembə/ | agosto · septiembre |
+| *October* · *November* · *December* | /ɒkˈtəʊbə/ · /nəʊˈvembə/ · /dɪˈsembə/ | octubre · noviembre · diciembre |
+| *yesterday* · *today* | /ˈjestədeɪ/ · /təˈdeɪ/ | ayer · hoy |
+| *tomorrow* | /təˈmɒrəʊ/ | mañana |
+| *the day after tomorrow* | /ðə deɪ ˌɑːftə təˈmɒrəʊ/ | pasado mañana |
+| *a holiday* · *a bank holiday* | /ˈhɒlədeɪ/ · /ˌbæŋk ˈhɒlədeɪ/ | día de fiesta · festivo |

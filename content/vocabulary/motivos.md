@@ -1,14 +1,13 @@
-La primera pregunta del curso fue *Why do you study English?* Estas son las respuestas que salieron y las palabras para construirlas.
-
-| Para… | En inglés |
-| --- | --- |
-| viajar | *to travel* · *to travel around the world* |
-| el trabajo | *for my job* · *to be a hotel receptionist* |
-| desarrollo personal | *for my personal development* · *to keep my mind active* |
-| la familia | *to visit my family in the UK / the US* · *because my family lives in the UK* |
-| hablar y entender | *to speak and understand English when I travel* |
-| recordar | *to remember past studies* |
-
-Fíjate en la palabra que va delante: ***to*** + verbo, ***for*** + nombre, ***because*** + oración. Lo explicamos en [to, for, because](grammar-finalidad.html).
-
-Palabras útiles: *knowledge* /ˈnɒlɪdʒ/ (conocimiento, la *k* no suena) · *improve* (mejorar) · *personal development* (desarrollo personal).
+| Inglés | Pronunciación (RP) | Español |
+| --- | --- | --- |
+| *to travel* | /tə ˈtrævl/ | viajar |
+| *to travel around the world* | /tə ˈtrævl əˈraʊnd ðə wɜːld/ | viajar por el mundo |
+| *my job* | /maɪ dʒɒb/ | mi trabajo |
+| *a receptionist* | /ə rɪˈsepʃənɪst/ | un/a recepcionista |
+| *personal development* | /ˈpɜːsənl dɪˈveləpmənt/ | desarrollo personal |
+| *to keep my mind active* | /tə kiːp maɪ maɪnd ˈæktɪv/ | mantener la mente activa |
+| *to improve* | /tʊ ɪmˈpruːv/ | mejorar |
+| *knowledge* | /ˈnɒlɪdʒ/ | conocimiento |
+| *to visit my family* | /tə ˈvɪzɪt maɪ ˈfæməli/ | visitar a mi familia |
+| *to understand* | /tʊ ˌʌndəˈstænd/ | entender |
+| *to remember* | /tə rɪˈmembə/ | recordar |
