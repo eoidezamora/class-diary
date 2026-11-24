@@ -107,6 +107,29 @@
     ]
   },
   {
+    "id": "objetos",
+    "title": "Identificar objetos",
+    "en": "Identifying objects",
+    "desc": "What's this? It's a coin. What are those? They're scissors. Lo que llevamos en el bolso, el bolsillo o la clase.",
+    "refs": [
+      [
+        13,
+        "What's in your bag?",
+        "what-s-in-your-bag"
+      ],
+      [
+        14,
+        "What's this? Is it a…?",
+        "what-s-this"
+      ],
+      [
+        14,
+        "Vocabulario de clase",
+        "pizarra-mas-vocabulario"
+      ]
+    ]
+  },
+  {
     "id": "procedencia",
     "title": "Procedencia y nacionalidad",
     "en": "Origin and nationality",
@@ -223,6 +246,11 @@
         12,
         "Deletrear un email",
         "como-se-deletrea"
+      ],
+      [
+        14,
+        "How do you spell it?",
+        "preguntar-por-otra"
       ]
     ]
   },

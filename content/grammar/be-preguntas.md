@@ -23,4 +23,8 @@ Las respuestas cortas repiten el verbo de la pregunta: *Are you…? – Yes, I a
 
 En las negativas, en cambio, sí: *No, I'm not.* · *No, he isn't.*
 
+### 4. Con *this* y *these*
+
+Las mismas reglas funcionan con los demostrativos: *Is this a pen? – No, it isn't.* · *Are these your keys? – Yes, they are.* En la respuesta usamos *it* o *they*, no *this* ni *these*. Más en [Demostrativos](grammar-demostrativos.html).
+
 **En resumen:** verbo delante del sujeto, *from* al final, y en las respuestas afirmativas la forma completa.

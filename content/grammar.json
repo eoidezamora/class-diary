@@ -60,6 +60,11 @@
         9,
         "Contracciones con be",
         "contracciones-con-be"
+      ],
+      [
+        14,
+        "Is this a pen? Are these…?",
+        "what-s-this"
       ]
     ]
   },
@@ -78,6 +83,29 @@
         11,
         "was / were",
         "where-in-spain"
+      ],
+      [
+        14,
+        "When was she born?",
+        "preguntar-por-otra"
+      ]
+    ]
+  },
+  {
+    "id": "demostrativos",
+    "title": "Demostrativos: this, that, these, those",
+    "en": "Demonstratives",
+    "desc": "this / that (singular), these / those (plural), cerca o lejos; What's this? – It's a…",
+    "refs": [
+      [
+        14,
+        "this, that, these, those",
+        "this-that-these-those"
+      ],
+      [
+        14,
+        "What's this? Is it a…?",
+        "what-s-this"
       ]
     ]
   },
@@ -106,6 +134,11 @@
         12,
         "What's your…?",
         "preguntar-datos-personales"
+      ],
+      [
+        14,
+        "What's her…? When was she born?",
+        "preguntar-por-otra"
       ]
     ]
   },
@@ -137,6 +170,11 @@
         13,
         "What's in your bag?",
         "what-s-in-your-bag"
+      ],
+      [
+        14,
+        "Plurales: some, masks, lamps",
+        "plurales"
       ]
     ]
   },

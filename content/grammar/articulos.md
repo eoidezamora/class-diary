@@ -17,4 +17,8 @@ Con varias cosas no usamos *a*: decimos ***some*** o nada. *I've got **some** ke
 
 Algunos objetos formados por dos partes iguales son **siempre plurales** en inglés, aunque en español sean singulares: *glasses* (gafas), *sunglasses*, *headphones*, *scissors*, *trousers*, *jeans*. Por eso decimos ***They're** my glasses* y no <s>*a glasses*</s>.
 
+### 4. Pronunciar los plurales
+
+Muchos plurales terminan en varias consonantes seguidas, y hay que pronunciarlas todas para que se oiga que es plural: *masks* /mɑːsks/, *lamps* /læmps/, *desks* /desks/, *clocks* /klɒks/.
+
 **En resumen:** *a* + sonido consonante, *an* + sonido vocal, *some* para plurales, y algunas cosas siempre en plural.

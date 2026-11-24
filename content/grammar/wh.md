@@ -28,4 +28,8 @@ Cuando la pregunta lleva preposición, en inglés suele ir **al final**, al cont
 
 La fórmula más útil es ***What's your…?***: *first name, surname, address, postcode, email address, phone number*. Y para el deletreo: ***How do you spell it?***
 
+### 5. Preguntar por otra persona
+
+Para preguntar datos de otra persona cambiamos *your* por ***her*** (de ella) o ***his*** (de él): *What's her surname? · What's his phone number?* Y con el pasado de *be*: *When was she born? · Where was he born?*
+
 **En resumen:** palabra interrogativa + verbo + sujeto, contracción con *is* y preposición al final.

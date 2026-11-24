@@ -16,4 +16,8 @@ En inglés «nacer» se dice con *be* en pasado: ***I was born***. Nunca <s>*I b
 > *I <b>was born in</b> Zamora. · I was born in 1995. · I was born <b>on</b> the 15th of April.*  
 > *<b>Where were</b> you born?*
 
+### 3. Preguntar por otra persona
+
+*When **was** she born? – She was born on the 22nd of August, 1995.* · *Where **was** he born? – He was born in London.*
+
 **En resumen:** *was* con *I, he, she, it*; *were* con *you, we, they*; y *I was born in…* para el nacimiento.
