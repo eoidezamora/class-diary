@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="">Functions</a><a href="grammar.html" class="on">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs g"><a href="grammar.html">Grammar</a> ›</p><h1 class="month-title">Preposiciones de lugar y tiempo <small class="en">Prepositions of place and time</small></h1><p class="intro">in / to the north, by / near / next to, in / on, on the 27th, in 1995. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-9-in-the-north-o-to-the-north">Sesión 9<small>in o to the north</small></a><a href="#sesion-11-situar-un-lugar-preposiciones">Sesión 11<small>by, near, next to</small></a><a href="#sesion-11-fechas-los-numeros-ordinales">Sesión 11<small>on the 27th of…</small></a><a href="#sesion-13-lugar-in-u-on-on-a-key-ring-no-in-a-key-ring">Sesión 13<small>in u on</small></a></div><article class="session summary g" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Las preposiciones son pequeñas pero cambian el significado de la frase, y casi nunca coinciden una a una con el español. Aquí reunimos las de <strong>lugar</strong> y las de <strong>tiempo</strong> que hemos visto.</p>
+<p class="crumbs g"><a href="grammar.html">Grammar</a> ›</p><h1 class="month-title">Preposiciones de lugar y tiempo <small class="en">Prepositions of place and time</small></h1><p class="intro">in / to the north, by / near / next to, in / on, on the 27th, in 1995. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag " href="notion-localidad.html"><span>Notion&nbsp;·</span> Situar una localidad en un país</a><a class="ntag " href="notion-numeros.html"><span>Notion&nbsp;·</span> Números</a><a class="ntag " href="notion-lugar.html"><span>Notion&nbsp;·</span> Dónde está algo: in u on</a><a class="ntag " href="notion-tiempo.html"><span>Notion&nbsp;·</span> Tiempo: días, fechas y años</a><a class="ntag v" href="vocab-calendario.html"><span>Vocabulary&nbsp;·</span> Días, meses y fechas</a><a class="ntag v" href="vocab-lugares.html"><span>Vocabulary&nbsp;·</span> Ciudad y paisaje</a></div><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-9-in-the-north-o-to-the-north">Sesión 9<small>in o to the north</small></a><a href="#sesion-11-situar-un-lugar-preposiciones">Sesión 11<small>by, near, next to</small></a><a href="#sesion-11-fechas-los-numeros-ordinales">Sesión 11<small>on the 27th of…</small></a><a href="#sesion-13-lugar-in-u-on-on-a-key-ring-no-in-a-key-ring">Sesión 13<small>in u on</small></a></div><article class="session summary g" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Las preposiciones son pequeñas pero cambian el significado de la frase, y casi nunca coinciden una a una con el español. Aquí reunimos las de <strong>lugar</strong> y las de <strong>tiempo</strong> que hemos visto.</p>
 <h3 class="sh">1. Lugar en un país: <em>in</em> o <em>to</em></h3>
 <ul>
 <li><em><strong>in</strong> the north of</em> = <strong>dentro</strong>: <em>A Coruña is in the north-west of Spain.</em></li>
@@ -186,6 +186,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>

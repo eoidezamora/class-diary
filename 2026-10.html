@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -760,6 +760,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>

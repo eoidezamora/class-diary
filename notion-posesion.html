@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="on">Notions</a><a href="functions.html" class="">Functions</a><a href="grammar.html" class="">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs "><a href="notions.html">Notions</a> ›</p><h1 class="month-title">Posesión <small class="en">Possession</small></h1><p class="intro">Whose? y Who&#x27;s, el &#x27;s de los nombres. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-9-contracciones-con-be">Sesión 9<small>Who&#x27;s o Whose</small></a></div><article class="session summary " id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Para hablar de a quién pertenece algo, el inglés usa sobre todo el <em><strong>'s</strong></em> detrás del nombre del dueño, y para preguntarlo, <em><strong>Whose?</strong></em></p>
+<p class="crumbs "><a href="notions.html">Notions</a> ›</p><h1 class="month-title">Posesión <small class="en">Possession</small></h1><p class="intro">Whose? y Who&#x27;s, el &#x27;s de los nombres. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag g" href="grammar-be-preguntas.html"><span>Grammar&nbsp;·</span> El verbo be: preguntas y respuestas cortas</a><a class="ntag g" href="grammar-wh.html"><span>Grammar&nbsp;·</span> Preguntas con wh-</a><a class="ntag g" href="grammar-posesion.html"><span>Grammar&nbsp;·</span> Posesión: &#x27;s y whose</a></div><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-9-contracciones-con-be">Sesión 9<small>Who&#x27;s o Whose</small></a></div><article class="session summary " id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Para hablar de a quién pertenece algo, el inglés usa sobre todo el <em><strong>'s</strong></em> detrás del nombre del dueño, y para preguntarlo, <em><strong>Whose?</strong></em></p>
 <h3 class="sh">El <em>'s</em> del dueño</h3>
 <p>Detrás del nombre de la persona añadimos <em><strong>'s</strong></em>: <em>It's <strong>Álvaro's</strong>.</em> (Es de Álvaro.) · <em>Laura's book</em> (el libro de Laura). Fíjate en que el orden es el contrario al español: primero el dueño y después la cosa.</p>
 <p>Este <em>'s</em> se escribe igual que la contracción de <em>is</em>, así que el contexto es el que aclara: <em>Álvaro's book</em> (el libro de Álvaro) frente a <em>Álvaro's happy</em> (= <em>Álvaro is happy</em>).</p>
@@ -46,6 +46,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>

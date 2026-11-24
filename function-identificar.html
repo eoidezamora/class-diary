@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="on">Functions</a><a href="grammar.html" class="">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Identificar objetos <small class="en">Identifying things</small></h1><p class="intro">What&#x27;s this? – It&#x27;s a coin. What are those? – They&#x27;re scissors. I&#x27;ve got… Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-13-what-s-in-your-bag">Sesión 13<small>What&#x27;s in your bag?</small></a><a href="#sesion-14-what-s-this-is-it-a">Sesión 14<small>What&#x27;s this? Is it a…?</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saber nombrar los objetos que nos rodean (en clase, en el bolso, en el bolsillo) y preguntar qué es algo que no conocemos es de lo primero que necesitamos en un idioma nuevo.</p>
+<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Identificar objetos <small class="en">Identifying things</small></h1><p class="intro">What&#x27;s this? – It&#x27;s a coin. What are those? – They&#x27;re scissors. I&#x27;ve got… Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag g" href="grammar-be-preguntas.html"><span>Grammar&nbsp;·</span> El verbo be: preguntas y respuestas cortas</a><a class="ntag g" href="grammar-demostrativos.html"><span>Grammar&nbsp;·</span> Demostrativos: this, that, these, those</a><a class="ntag g" href="grammar-articulos.html"><span>Grammar&nbsp;·</span> a / an / some y los plurales</a><a class="ntag v" href="vocab-objetos.html"><span>Vocabulary&nbsp;·</span> Objetos de clase y personales</a></div><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-13-what-s-in-your-bag">Sesión 13<small>What&#x27;s in your bag?</small></a><a href="#sesion-14-what-s-this-is-it-a">Sesión 14<small>What&#x27;s this? Is it a…?</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saber nombrar los objetos que nos rodean (en clase, en el bolso, en el bolsillo) y preguntar qué es algo que no conocemos es de lo primero que necesitamos en un idioma nuevo.</p>
 <h3 class="sh">1. Preguntar qué es algo</h3>
 <p>La pregunta clave es <em><strong>What's this?</strong></em> para algo cercano y <em><strong>What's that?</strong></em> para algo lejano; en plural, <em><strong>What are these / those?</strong></em> Respondemos con <em>It's…</em> o <em>They're…</em>:</p>
 <blockquote>
@@ -184,6 +184,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>

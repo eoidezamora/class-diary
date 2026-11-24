@@ -202,6 +202,27 @@ def materials_page(months):
     )
 
 
+def related_html(n, c):
+    mine = {(r[0], r[2]) for r in n["refs"] if len(r) > 2}
+    out = []
+    for c2 in COLLECTIONS:
+        for m in c2["items"]:
+            if m is n:
+                continue
+            shared = mine & {(r[0], r[2]) for r in m["refs"] if len(r) > 2}
+            if shared:
+                out.append((c2, m, len(shared)))
+    if not out:
+        return ""
+    order = {c2["key"]: i for i, c2 in enumerate(COLLECTIONS)}
+    out.sort(key=lambda x: (order[x[0]["key"]], -x[2]))
+    links = "".join(
+        f'<a class="ntag {c2["cls"]}" href="{c2["prefix"]}-{m["id"]}.html"><span>{c2["tag"]}&nbsp;·</span> {html.escape(m["title"])}</a>'
+        for c2, m, _ in out
+    )
+    return f'<div class="related"><span>Relacionado en otras secciones</span>{links}</div>'
+
+
 def quizlet_html(n):
     q = n.get("quizlet") or []
     if not q:
@@ -255,7 +276,8 @@ def notion_article(n, months, c):
         f'<p class="crumbs {c["cls"]}"><a href="{c["key"]}.html">{c["label"]}</a> ›</p>'
         f'<h1 class="month-title">{html.escape(n["title"])} <small class="en">{html.escape(n["en"])}</small></h1>'
         f'<p class="intro">{html.escape(n["desc"])} Primero, todo junto; después, lo que vimos en cada sesión.</p>'
-        f'<div class="toc">{"".join(toc)}</div>' + summary
+        + related_html(n, c)
+        + f'<div class="toc">{"".join(toc)}</div>' + summary
         + ('<h2 class="section-title">Sesión a sesión</h2>' if parts else "") + "".join(parts)
     )
 
@@ -273,7 +295,7 @@ def notions_page(months, c):
                 refs.append(f'<li><a href="{c["prefix"]}-{n["id"]}.html#{anchor}"><b>Sesión {k}</b> · {html.escape(label)}</a></li>')
         cards.append(
             f'<article class="notion {c["cls"]}" id="{n["id"]}"><h2><a href="{c["prefix"]}-{n["id"]}.html">{html.escape(n["title"])}</a> <small>{html.escape(n["en"])}</small></h2>'
-            f'<p>{html.escape(n["desc"])}</p>{quizlet_html(n)}<ul>{"".join(refs)}</ul>'
+            f'<p>{html.escape(n["desc"])}</p>{quizlet_html(n)}<ul>{"".join(refs)}</ul>{related_html(n, c)}'
             f'<a class="btn read" href="{c["prefix"]}-{n["id"]}.html">{"Ver la lista completa" if c["key"] == "vocabulary" else "Leer el artículo completo"}</a></article>'
         )
     return (
@@ -317,6 +339,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {{
     try {{ localStorage.setItem(key, box.checked ? '1' : '0'); }} catch (e) {{}}
   }});
 }});
+</script>
+<script>
+(function () {{
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {{
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) {{ return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); }})
+         || vs.find(function (v) {{ return v.lang === 'en-GB'; }})
+         || vs.find(function (v) {{ return /^en/.test(v.lang); }}) || null;
+  }}
+  if (synth) {{ pick(); synth.onvoiceschanged = pick; }}
+  function say(text) {{
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }}
+  tables.forEach(function (t) {{
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {{
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {{
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) {{ return e.textContent; }}).join(', ')
+          .replace(/\\s*·\\s*/g, ', ').replace(/\\((UK|US)\\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () {{ say(text); }});
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {{
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {{
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }}
+        }});
+      }});
+    }});
+  }});
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+}})();
 </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="on">Functions</a><a href="grammar.html" class="">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Saludar, presentar y despedirse <small class="en">Greeting, introducing and saying goodbye</small></h1><p class="intro">Hello!, How are you?, This is Ana, See you!, Mr, Mrs, Ms. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-1-actividades">Sesión 1<small>Presentarnos</small></a><a href="#sesion-2-notas-de-lengua">Sesión 2<small>I&#x27;m y my name&#x27;s</small></a><a href="#sesion-2-pizarra-2-greetings-goodbyes">Sesión 2<small>Greetings &amp; goodbyes</small></a><a href="#sesion-2-tratamientos-como-me-dirijo-a-alguien">Sesión 2<small>Tratamientos</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saludar, presentarnos y despedirnos son las primeras cosas que hacemos con cualquier persona. En inglés hay fórmulas fijas para cada momento, y elegir bien entre las formales y las informales es tan importante como la pronunciación.</p>
+<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Saludar, presentar y despedirse <small class="en">Greeting, introducing and saying goodbye</small></h1><p class="intro">Hello!, How are you?, This is Ana, See you!, Mr, Mrs, Ms. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag g" href="grammar-be-afirmativa.html"><span>Grammar&nbsp;·</span> El verbo be: afirmativa y contracciones</a><a class="ntag v" href="vocab-saludos.html"><span>Vocabulary&nbsp;·</span> Saludos, despedidas y tratamientos</a></div><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-1-actividades">Sesión 1<small>Presentarnos</small></a><a href="#sesion-2-notas-de-lengua">Sesión 2<small>I&#x27;m y my name&#x27;s</small></a><a href="#sesion-2-pizarra-2-greetings-goodbyes">Sesión 2<small>Greetings &amp; goodbyes</small></a><a href="#sesion-2-tratamientos-como-me-dirijo-a-alguien">Sesión 2<small>Tratamientos</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saludar, presentarnos y despedirnos son las primeras cosas que hacemos con cualquier persona. En inglés hay fórmulas fijas para cada momento, y elegir bien entre las formales y las informales es tan importante como la pronunciación.</p>
 <h3 class="sh">1. Saludar</h3>
 <div class="table-wrap"><table>
 <thead>
@@ -157,6 +157,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>

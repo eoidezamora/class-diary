@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=02859fca">
+<link rel="stylesheet" href="assets/style.css?v=58691b5f">
 </head>
 <body>
 <header class="top">
@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="on">Functions</a><a href="grammar.html" class="">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Pedir y ofrecer el deletreo <small class="en">Spelling</small></h1><p class="intro">How do you spell it?, Can you spell it, please?, Shall I spell it?, deletrear un email. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-3-pizarra-the-alphabet-song">Sesión 3<small>The Alphabet Song</small></a><a href="#sesion-11-where-in-spain-are-you-from">Sesión 11<small>Can you spell it, please?</small></a><a href="#sesion-12-como-se-deletrea-un-email">Sesión 12<small>Deletrear un email</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saber deletrear es imprescindible para dar un nombre, un apellido o un correo electrónico, sobre todo por teléfono. Para hacerlo bien hay que conocer el sonido de cada letra y unas pocas fórmulas.</p>
+<p class="crumbs f"><a href="functions.html">Functions</a> ›</p><h1 class="month-title">Pedir y ofrecer el deletreo <small class="en">Spelling</small></h1><p class="intro">How do you spell it?, Can you spell it, please?, Shall I spell it?, deletrear un email. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag " href="notion-localidad.html"><span>Notion&nbsp;·</span> Situar una localidad en un país</a><a class="ntag " href="notion-procedencia.html"><span>Notion&nbsp;·</span> Procedencia y nacionalidad</a><a class="ntag g" href="grammar-was-were.html"><span>Grammar&nbsp;·</span> Pasado de be: was / were</a><a class="ntag v" href="vocab-datos.html"><span>Vocabulary&nbsp;·</span> Datos personales</a></div><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-3-pizarra-the-alphabet-song">Sesión 3<small>The Alphabet Song</small></a><a href="#sesion-11-where-in-spain-are-you-from">Sesión 11<small>Can you spell it, please?</small></a><a href="#sesion-12-como-se-deletrea-un-email">Sesión 12<small>Deletrear un email</small></a></div><article class="session summary f" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Saber deletrear es imprescindible para dar un nombre, un apellido o un correo electrónico, sobre todo por teléfono. Para hacerlo bien hay que conocer el sonido de cada letra y unas pocas fórmulas.</p>
 <h3 class="sh">1. El alfabeto, ordenado por sonidos</h3>
 <p>Las letras inglesas se aprenden mejor agrupadas por el sonido que comparten:</p>
 <div class="table-wrap"><table>
@@ -181,6 +181,61 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
     try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
   });
 });
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
 </script>
 </body>
 </html>
