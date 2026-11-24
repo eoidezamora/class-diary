@@ -32,15 +32,40 @@
 | <img class="flag" src="https://flagcdn.com/w40/vn.png" alt="" width="24" height="16"> *Vietnam* | /ˌvjetˈnæm/ | *Vietnamese* | /ˌvjetnəˈmiːz/ |
 | <img class="flag" src="https://flagcdn.com/w40/au.png" alt="" width="24" height="16"> *Australia* | /ɒˈstreɪliə/ | *Australian* | /ɒˈstreɪliən/ |
 
-### Continentes y geografía británica
+### Continentes
+
+| Continente | Pronunciación (RP) | Adjetivo | Pronunciación (RP) |
+| --- | --- | --- | --- |
+| <span class="ico">🌍</span> *Africa* | /ˈæfrɪkə/ | *African* | /ˈæfrɪkən/ |
+| <span class="ico">🧊</span> *Antarctica* | /ænˈtɑːktɪkə/ | *Antarctic* | /ænˈtɑːktɪk/ |
+| <span class="ico">🌏</span> *Asia* | /ˈeɪʒə/ | *Asian* | /ˈeɪʒn/ |
+| <span class="ico">🌍</span> *Europe* | /ˈjʊərəp/ | *European* | /ˌjʊərəˈpiːən/ |
+| <span class="ico">🌎</span> *North America* | /ˌnɔːθ əˈmerɪkə/ | *North American* | /ˌnɔːθ əˈmerɪkən/ |
+| <span class="ico">🌏</span> *Australasia* | /ˌɒstrəˈleɪʒə/ | *Australasian* | /ˌɒstrəˈleɪʒn/ |
+| <span class="ico">🌎</span> *South America* | /ˌsaʊθ əˈmerɪkə/ | *South American* | /ˌsaʊθ əˈmerɪkən/ |
+
+- **Mayúsculas:** continentes, países, nacionalidades e idiomas van siempre con mayúscula: *Spanish*, nunca <s>*spanish*</s>.
+- ***Australasia*** u ***Oceania*** /ˌəʊʃiˈɑːniə/: el continente donde está Australia tiene los dos nombres.
+- El acento cambia en *EUrope* → *euroPEan*. En los demás se mantiene: *AFrica* → *AFrican*, *ASia* → *ASian*.
+- Fíjate en *Asian* /ˈeɪʒn/: la *s* suena como la *j* francesa, /ʒ/.
+
+### Los puntos cardinales
 
 | Inglés | Pronunciación (RP) | Español |
 | --- | --- | --- |
-| *Europe* | /ˈjʊərəp/ | Europa |
-| *Africa* | /ˈæfrɪkə/ | África |
-| *Asia* | /ˈeɪʒə/ | Asia |
-| *North / South America* | /nɔːθ/ · /saʊθ əˈmerɪkə/ | América del Norte / del Sur |
-| *Australasia* · *Oceania* | /ˌɒstrəˈleɪʒə/ · /ˌəʊʃiˈɑːniə/ | Oceanía |
+| <span class="ico">⬆️</span> *north* | /nɔːθ/ | norte |
+| <span class="ico">⬇️</span> *south* | /saʊθ/ | sur |
+| <span class="ico">➡️</span> *east* | /iːst/ | este |
+| <span class="ico">⬅️</span> *west* | /west/ | oeste |
+
+- *north* y *south* terminan en /θ/, con la lengua entre los dientes.
+- Combinaciones con guion: *north-east, north-west, south-east, south-west*.
+
+### Geografía británica
+
+| Inglés | Pronunciación (RP) | Español |
+| --- | --- | --- |
+| *the United Kingdom* · *the UK* | /ðə juˌnaɪtɪd ˈkɪŋdəm/ · /ðə ˌjuː ˈkeɪ/ | el Reino Unido |
 | *the British Isles* | /ðə ˈbrɪtɪʃ aɪlz/ | las Islas Británicas |
 | *Great Britain* | /ˌɡreɪt ˈbrɪtn/ | Gran Bretaña |
 | <img class="flag" src="https://flagcdn.com/w40/gb-nir.png" alt="" width="24" height="16"> *Northern Ireland* | /ˌnɔːðən ˈaɪələnd/ | Irlanda del Norte |
@@ -48,3 +73,5 @@
 | <img class="flag" src="https://flagcdn.com/w40/is.png" alt="" width="24" height="16"> *Iceland* | /ˈaɪslənd/ | Islandia |
 | *London* · *Edinburgh* | /ˈlʌndən/ · /ˈedɪnbrə/ | Londres · Edimburgo |
 | *Cardiff* · *Belfast* · *Dublin* | /ˈkɑːdɪf/ · /ˈbelfɑːst/ · /ˈdʌblɪn/ | |
+
+- ***The United Kingdom*** = *England, Scotland, Wales* y *Northern Ireland*. La nacionalidad es ***British***; la de *Wales*, ***Welsh***.

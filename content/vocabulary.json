@@ -49,9 +49,9 @@
   },
   {
     "id": "paises",
-    "title": "Países y nacionalidades",
-    "en": "Countries and nationalities",
-    "desc": "Continentes, países, nacionalidades y las Islas Británicas.",
+    "title": "Países, nacionalidades y continentes",
+    "en": "Countries, nationalities and continents",
+    "desc": "Continentes y sus adjetivos, puntos cardinales, países, nacionalidades y las Islas Británicas.",
     "refs": [
       [
         5,
@@ -100,6 +100,10 @@
       {
         "title": "Países y nacionalidades",
         "url": "https://quizlet.com/es/1239287525/a2-eoi-zamora-countries-and-nationalities-flash-cards/"
+      },
+      {
+        "title": "Continentes y puntos cardinales",
+        "url": "https://quizlet.com/es/1239292632/a2-eoi-zamora-continents-and-compass-points-flash-cards/"
       }
     ]
   },
