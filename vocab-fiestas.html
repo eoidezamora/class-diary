@@ -18,7 +18,7 @@
   <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="">Functions</a><a href="grammar.html" class="">Grammar</a><a href="vocabulary.html" class="on">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
 </header>
 <main class="wrap">
-<p class="crumbs v"><a href="vocabulary.html">Vocabulary</a> ›</p><h1 class="month-title">Fiestas: Halloween y Bonfire Night <small class="en">Festivals</small></h1><p class="intro">Halloween, All Saints&#x27; Day, Eve, trick or treat, Guy Fawkes&#x27; Night. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag " href="notion-numeros.html"><span>Notion&nbsp;·</span> Números</a></div><div class="toc"><a href="#resumen">Lista<small>Todo junto</small></a><a href="#sesion-7-halloween">Sesión 7<small>Halloween</small></a><a href="#sesion-9-que-hicimos">Sesión 9<small>Bonfire Night</small></a></div><article class="session summary v" id="resumen"><header><span class="badge sum">Lista</span><time>Pronunciación británica (RP)</time></header><div class="qzs"><a class="qz" href="https://quizlet.com/es/1239274046/a2-eoi-zamora-fiestas-halloween-y-bonfire-night-festivals-flash-cards/" target="_blank" rel="noopener">Quizlet · Halloween y Bonfire Night</a></div><div class="table-wrap"><table>
+<p class="crumbs v"><a href="vocabulary.html">Vocabulary</a> ›</p><h1 class="month-title">Fiestas: Halloween y Bonfire Night <small class="en">Festivals</small></h1><p class="intro">Halloween, All Saints&#x27; Day, Eve, trick or treat, Guy Fawkes&#x27; Night. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="related"><span>Relacionado en otras secciones</span><a class="ntag " href="notion-numeros.html"><span>Notion&nbsp;·</span> Números</a></div><div class="toc"><a href="#resumen">Lista<small>Todo junto</small></a><a href="#sesion-7-halloween">Sesión 7<small>Halloween</small></a><a href="#sesion-9-que-hicimos">Sesión 9<small>Bonfire Night</small></a></div><article class="session summary v" id="resumen"><header><span class="badge sum">Lista</span><time>Pronunciación británica (RP)</time></header><div class="qzs"><a class="qz" href="https://quizlet.com/es/1239287575/a2-eoi-zamora-halloween-and-bonfire-night-flash-cards/" target="_blank" rel="noopener">Quizlet · Halloween y Bonfire Night</a></div><div class="table-wrap"><table>
 <thead>
 <tr>
 <th>Inglés</th>
@@ -167,7 +167,7 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
         if (!td || !td.querySelector('em')) return;
         if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
         var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
-          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '').replace(/\s*\/\s*/g, ', ').replace(/[()…]/g, ' ');
         var b = document.createElement('button');
         b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
         b.addEventListener('click', function () { say(text); });

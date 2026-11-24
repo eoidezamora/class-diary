@@ -77,7 +77,7 @@ document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
         if (!td || !td.querySelector('em')) return;
         if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
         var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
-          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '');
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '').replace(/\s*\/\s*/g, ', ').replace(/[()…]/g, ' ');
         var b = document.createElement('button');
         b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
         b.addEventListener('click', function () { say(text); });
