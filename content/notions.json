@@ -177,6 +177,11 @@
         9,
         "Who's o Whose",
         "contracciones-con-be"
+      ],
+      [
+        15,
+        "Whose is this?",
+        "whose-is-this"
       ]
     ]
   },
@@ -208,6 +213,24 @@
         6,
         "Who's it by?",
         "who-s-it-by"
+      ]
+    ]
+  },
+  {
+    "id": "describir",
+    "title": "Describir objetos",
+    "en": "Describing things",
+    "desc": "Tamaño, forma, color y material: What's it like? What's it made of?",
+    "refs": [
+      [
+        15,
+        "What's it like?",
+        "what-s-it-like"
+      ],
+      [
+        15,
+        "El orden de los adjetivos",
+        "el-orden-de-los-adjetivos"
       ]
     ]
   }

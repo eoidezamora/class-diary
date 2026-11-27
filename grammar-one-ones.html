@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>one / ones · Grammar · Class Diary · Básico A2</title>
+<link rel="icon" href="assets/logo-eoi.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=fe9046f0">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a href="index.html" class="brand"><img src="assets/logo-eoi.png" alt="EOI de Zamora"><span><b>Class Diary</b><small>Básico A2 · 2026-27</small></span></a>
+  </div>
+  <div class="wrap"><nav class="months" aria-label="Meses"><a href="index.html" class="">Inicio</a><a href="2026-11.html" class="">Noviembre 2026</a><a href="2026-10.html" class="">Octubre 2026</a><a href="notions.html" class="">Notions</a><a href="functions.html" class="">Functions</a><a href="grammar.html" class="on">Grammar</a><a href="vocabulary.html" class="">Vocabulary</a><a href="materiales.html" class="">Materiales</a></nav></div>
+</header>
+<main class="wrap">
+<p class="crumbs g"><a href="grammar.html">Grammar</a> ›</p><h1 class="month-title">one / ones <small class="en">one and ones</small></h1><p class="intro">The red one, the blue ones: para no repetir un nombre. Primero, todo junto; después, lo que vimos en cada sesión.</p><div class="toc"><a href="#resumen">Artículo<small>Todo junto</small></a><a href="#sesion-15-one-ones-para-no-repetir">Sesión 15<small>one / ones</small></a></div><article class="session summary g" id="resumen"><header><span class="badge sum">Artículo</span><time>Todo lo visto, explicado y ordenado</time></header><p>Cuando ya está claro de qué hablamos, en español quitamos el nombre: «el coche rojo y <strong>el azul</strong>». En inglés no podemos dejar el adjetivo solo; necesitamos una palabra que ocupe el lugar del nombre: <em><strong>one</strong></em> o <em><strong>ones</strong></em>.</p>
+<h3 class="sh">1. <em>one</em> para el singular, <em>ones</em> para el plural</h3>
+<blockquote>
+<p><em>We have two cars. The red <strong>one</strong> is a Peugeot and the blue <strong>one</strong> is a Renault.</em><br />
+<em>We have four cars. The red <strong>ones</strong> are mine and the blue <strong>ones</strong> are my brother's.</em></p>
+</blockquote>
+<p>Nunca decimos <s><em>the red is a Peugeot</em></s>: el adjetivo necesita algo detrás.</p>
+<h3 class="sh">2. Con <em>this, that, which</em></h3>
+<p>También sustituye al nombre detrás de los demostrativos: <em>This watch is very expensive.</em> → <em><strong>This one</strong> is very expensive.</em> Y para preguntar: <em>Which one?</em> (¿Cuál?) · <em>Which ones?</em> (¿Cuáles?).</p>
+<p><strong>En resumen:</strong> adjetivo o demostrativo + <em>one</em> (singular) / <em>ones</em> (plural), para no repetir el nombre.</p>
+</article><h2 class="section-title">Sesión a sesión</h2><article class="session art" id="sesion-15-one-ones-para-no-repetir"><header><span class="badge">Sesión 15</span><time>jueves 26 de noviembre</time></header><h3><em>one / ones</em>: para no repetir</h3>
+<p>Cuando ya sabemos de qué hablamos, cambiamos el nombre por <em><strong>one</strong></em> (singular) u <em><strong>ones</strong></em> (plural):</p>
+<blockquote>
+<p><em>This watch is very expensive.</em> → <em><strong>This one</strong> is very expensive.</em><br />
+<em>We have two cars. The red <strong>one</strong> is a Peugeot and the blue <strong>one</strong> is a Renault.</em><br />
+<em>We have four cars. The red <strong>ones</strong> are mine and the blue <strong>ones</strong> are my brother's.</em></p>
+</blockquote>
+<ul>
+<li><em>one</em> sustituye a un nombre en singular (<em>car</em>), <em>ones</em> a un nombre en plural (<em>cars</em>).</li>
+<li>Va detrás de un adjetivo o de <em>this / that / the</em>: <em>the red one</em>, <em>this one</em>, <em>the big ones</em>.</li>
+</ul>
+<p class="back"><a href="2026-11.html#sesion-15-one-ones-para-no-repetir">Ver en el diario de la sesión 15 →</a></p></article>
+</main>
+<footer class="wrap foot">
+  <img src="assets/licencia-cc.png" alt="Licencia Creative Commons BY-NC-SA, Laura Jambrina Alonso">
+  <p>© Laura Jambrina Alonso, EOI de Zamora. Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. Las referencias al libro <i>English File</i> (Oxford University Press) pertenecen a sus autores.</p>
+</footer>
+<script>
+document.querySelectorAll('.hw input[type=checkbox]').forEach(function (box) {
+  var key = 'cd-' + box.dataset.key;
+  try { box.checked = localStorage.getItem(key) === '1'; } catch (e) {}
+  box.addEventListener('change', function () {
+    try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
+  });
+});
+</script>
+<script>
+(function () {
+  var tables = document.querySelectorAll('.summary.v table');
+  if (!tables.length) return;
+  var synth = window.speechSynthesis, voice = null;
+  function pick() {
+    if (!synth) return;
+    var vs = synth.getVoices();
+    voice = vs.find(function (v) { return v.lang === 'en-GB' && /female|libby|sonia|serena|kate|google uk english female/i.test(v.name); })
+         || vs.find(function (v) { return v.lang === 'en-GB'; })
+         || vs.find(function (v) { return /^en/.test(v.lang); }) || null;
+  }
+  if (synth) { pick(); synth.onvoiceschanged = pick; }
+  function say(text) {
+    if (!synth) return;
+    synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = 0.85; if (voice) u.voice = voice;
+    synth.speak(u);
+  }
+  tables.forEach(function (t) {
+    var head = t.querySelector('thead');
+    if (!head || !/Pronunciaci/.test(head.textContent)) return;
+    t.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      [0, 2].forEach(function (i) {
+        var td = cells[i];
+        if (!td || !td.querySelector('em')) return;
+        if (i === 2 && !(cells[3] && /\//.test(cells[3].textContent))) return;
+        var text = Array.prototype.map.call(td.querySelectorAll('em'), function (e) { return e.textContent; }).join(', ')
+          .replace(/\s*·\s*/g, ', ').replace(/\((UK|US)\)/g, '').replace(/\s*\/\s*/g, ', ').replace(/[()…]/g, ' ');
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'say'; b.setAttribute('aria-label', 'Escuchar: ' + text); b.textContent = '🔊';
+        b.addEventListener('click', function () { say(text); });
+        td.insertBefore(b, td.firstChild);
+        td.querySelectorAll('em').forEach(function (em) {
+          var w = em.textContent.trim().replace(/^(a|an|the|to) /i, '');
+          if (/^[A-Za-z'-]+$/.test(w)) {
+            var a = document.createElement('a');
+            a.href = 'https://dictionary.cambridge.org/pronunciation/english/' + w.toLowerCase();
+            a.target = '_blank'; a.rel = 'noopener'; a.className = 'camb'; a.title = 'Pronunciación en Cambridge Dictionary';
+            em.parentNode.insertBefore(a, em); a.appendChild(em);
+          }
+        });
+      });
+    });
+  });
+  var note = document.createElement('p');
+  note.className = 'saynote';
+  note.innerHTML = '🔊 Pulsa el altavoz para escuchar la palabra con voz británica (depende de tu dispositivo). ' +
+    'Pulsa la palabra para oír la pronunciación del <i>Cambridge Dictionary</i> (UK).';
+  var first = document.querySelector('.summary.v header');
+  if (first) first.insertAdjacentElement('afterend', note);
+})();
+</script>
+</body>
+</html>

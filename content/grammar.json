@@ -65,6 +65,11 @@
         14,
         "Is this a pen? Are these…?",
         "what-s-this"
+      ],
+      [
+        15,
+        "Is this your key?",
+        "whose-is-this"
       ]
     ]
   },
@@ -106,6 +111,42 @@
         14,
         "What's this? Is it a…?",
         "what-s-this"
+      ],
+      [
+        15,
+        "Is this / Are these your…?",
+        "whose-is-this"
+      ]
+    ]
+  },
+  {
+    "id": "one-ones",
+    "title": "one / ones",
+    "en": "one and ones",
+    "desc": "The red one, the blue ones: para no repetir un nombre.",
+    "refs": [
+      [
+        15,
+        "one / ones",
+        "one-ones"
+      ]
+    ]
+  },
+  {
+    "id": "adjetivos",
+    "title": "Los adjetivos y su orden",
+    "en": "Adjectives and adjective order",
+    "desc": "Opinión, tamaño, forma, color, material + nombre: a beautiful big oval grey leather bag.",
+    "refs": [
+      [
+        15,
+        "What's it like?",
+        "what-s-it-like"
+      ],
+      [
+        15,
+        "El orden de los adjetivos",
+        "el-orden-de-los-adjetivos"
       ]
     ]
   },
@@ -193,6 +234,11 @@
         9,
         "Whose o Who's",
         "contracciones-con-be"
+      ],
+      [
+        15,
+        "Whose is this? It's Ana's.",
+        "whose-is-this"
       ]
     ]
   },

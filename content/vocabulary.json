@@ -202,6 +202,19 @@
     ]
   },
   {
+    "id": "descripcion",
+    "title": "Tamaño, forma, color y material",
+    "en": "Size, shape, colour and material",
+    "desc": "big, round, grey, leather…",
+    "refs": [
+      [
+        15,
+        "What's it like?",
+        "what-s-it-like"
+      ]
+    ]
+  },
+  {
     "id": "lugares",
     "title": "Ciudad y paisaje",
     "en": "Town and landscape",

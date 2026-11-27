@@ -14,4 +14,8 @@ Para preguntar de quién es algo usamos ***Whose*** /huːz/: *Whose book is this
 
 Con las cosas pasa algo parecido: ***it's*** es *it is*, e ***its*** (sin apóstrofo) es el posesivo, «su» de una cosa: *It's a hotel. Its name is Ritz.*
 
+### 4. Posesiones y relaciones
+
+El *'s* sirve para cosas (*Ana's bag*) y también para relaciones entre personas: *Ana's teacher*, *Juan's father*. Para responder sin repetir, usamos *mine* (mío) y *yours* (tuyo): *Is this your key? – Yes, it's mine.* · *Are these yours?*
+
 **En resumen:** dueño + *'s* + cosa; *Whose?* para preguntar; y *its* sin apóstrofo para «su» de una cosa.
